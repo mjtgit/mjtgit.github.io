@@ -38,7 +38,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="MJT">
     <meta name="description" itemprop="description" content="自娱自乐......">
-    <meta name="keywords" content=",tool">
+    <meta name="keywords" content="">
 
     <!-- Site Verification -->
     
@@ -70,7 +70,7 @@
     <meta property="og:title" content="git 指令总结 | 马江涛的博客">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="自娱自乐......">
-    <meta property="og:article:tag" content="tool"> 
+    
 
     
         <meta property="article:published_time" content="1月 26, 2018" />
@@ -333,7 +333,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#本地-有内容-和远程-有内容-关联"><span class="post-toc-number">2.</span> <span class="post-toc-text">本地(有内容)和远程(有内容)关联</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#本地-无内容-和远程-无内容-关联"><span class="post-toc-number">3.</span> <span class="post-toc-text">本地(无内容)和远程(无内容)关联</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#本地-有内容-和远程-无内容-关联"><span class="post-toc-number">4.</span> <span class="post-toc-text">本地(有内容)和远程(无内容)关联</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#本地-无内容-和远程-有内容-关联"><span class="post-toc-number">5.</span> <span class="post-toc-text">本地(无内容)和远程(有内容)关联</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#获取远程仓库分支（只是刷新远程分支）"><span class="post-toc-number">6.</span> <span class="post-toc-text">获取远程仓库分支（只是刷新远程分支）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#本地新建dev分支并切换到dev分支"><span class="post-toc-number">7.</span> <span class="post-toc-text">本地新建dev分支并切换到dev分支</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#本地新建dev分支并切换到dev分支并同步远程的dev分支到这个分支"><span class="post-toc-number">8.</span> <span class="post-toc-text">本地新建dev分支并切换到dev分支并同步远程的dev分支到这个分支</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#本地新建分支"><span class="post-toc-number">9.</span> <span class="post-toc-text">本地新建分支</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#切换分支"><span class="post-toc-number">10.</span> <span class="post-toc-text">切换分支</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#将新分支发布在github上"><span class="post-toc-number">11.</span> <span class="post-toc-text">将新分支发布在github上</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#本地删除分支"><span class="post-toc-number">12.</span> <span class="post-toc-text">本地删除分支</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#远程端删除分支"><span class="post-toc-number">13.</span> <span class="post-toc-text">远程端删除分支</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#合并dev分支到当前分支"><span class="post-toc-number">14.</span> <span class="post-toc-text">合并dev分支到当前分支</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#撤销为保存到本地仓库的修改"><span class="post-toc-number">15.</span> <span class="post-toc-text">撤销为保存到本地仓库的修改</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#关联多个仓库"><span class="post-toc-number">16.</span> <span class="post-toc-text">关联多个仓库</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -405,7 +405,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/tool/">tool</a>
+        
     </ul>
     
 
@@ -485,6 +485,21 @@
         <h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><blockquote>
 <p>&ensp;&ensp;git指令总结</p>
 </blockquote>
+<h5 id="本地-有内容-和远程-有内容-关联"><a href="#本地-有内容-和远程-有内容-关联" class="headerlink" title="本地(有内容)和远程(有内容)关联"></a>本地(有内容)和远程(有内容)关联</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# 仓库名&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin git@github.com:coderliaoyajun/仓库名.git</span><br><span class="line">git pull origin master --allow-unrelated-histories</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<h5 id="本地-无内容-和远程-无内容-关联"><a href="#本地-无内容-和远程-无内容-关联" class="headerlink" title="本地(无内容)和远程(无内容)关联"></a>本地(无内容)和远程(无内容)关联</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# 仓库名&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin git@github.com:coderliaoyajun/仓库名.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<h5 id="本地-有内容-和远程-无内容-关联"><a href="#本地-有内容-和远程-无内容-关联" class="headerlink" title="本地(有内容)和远程(无内容)关联"></a>本地(有内容)和远程(无内容)关联</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:coderliaoyajun/仓库名.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<h5 id="本地-无内容-和远程-有内容-关联"><a href="#本地-无内容-和远程-有内容-关联" class="headerlink" title="本地(无内容)和远程(有内容)关联"></a>本地(无内容)和远程(有内容)关联</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:coderliaoyajun/仓库名.git 仓库名</span><br></pre></td></tr></table></figure>
+<h5 id="获取远程仓库分支（只是刷新远程分支）"><a href="#获取远程仓库分支（只是刷新远程分支）" class="headerlink" title="获取远程仓库分支（只是刷新远程分支）"></a>获取远程仓库分支（只是刷新远程分支）</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin</span><br></pre></td></tr></table></figure>
+<h5 id="本地新建dev分支并切换到dev分支"><a href="#本地新建dev分支并切换到dev分支" class="headerlink" title="本地新建dev分支并切换到dev分支"></a>本地新建dev分支并切换到dev分支</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b dev</span><br></pre></td></tr></table></figure>
+<h5 id="本地新建dev分支并切换到dev分支并同步远程的dev分支到这个分支"><a href="#本地新建dev分支并切换到dev分支并同步远程的dev分支到这个分支" class="headerlink" title="本地新建dev分支并切换到dev分支并同步远程的dev分支到这个分支"></a>本地新建dev分支并切换到dev分支并同步远程的dev分支到这个分支</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b dev origin/dev</span><br></pre></td></tr></table></figure>
+<h5 id="本地新建分支"><a href="#本地新建分支" class="headerlink" title="本地新建分支"></a>本地新建分支</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch dev</span><br></pre></td></tr></table></figure>
+<h5 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout dev</span><br></pre></td></tr></table></figure>
+<h5 id="将新分支发布在github上"><a href="#将新分支发布在github上" class="headerlink" title="将新分支发布在github上"></a>将新分支发布在github上</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
+<h5 id="本地删除分支"><a href="#本地删除分支" class="headerlink" title="本地删除分支"></a>本地删除分支</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d dev</span><br></pre></td></tr></table></figure>
+<h5 id="远程端删除分支"><a href="#远程端删除分支" class="headerlink" title="远程端删除分支"></a>远程端删除分支</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin :dev   (分支名前的冒号代表删除)</span><br></pre></td></tr></table></figure>
+<h5 id="合并dev分支到当前分支"><a href="#合并dev分支到当前分支" class="headerlink" title="合并dev分支到当前分支"></a>合并dev分支到当前分支</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge dev</span><br></pre></td></tr></table></figure>
+<h5 id="撤销为保存到本地仓库的修改"><a href="#撤销为保存到本地仓库的修改" class="headerlink" title="撤销为保存到本地仓库的修改"></a>撤销为保存到本地仓库的修改</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout assets/page/m/wechatredbag/wechatredbag.twig</span><br></pre></td></tr></table></figure>
+<h5 id="关联多个仓库"><a href="#关联多个仓库" class="headerlink" title="关联多个仓库"></a>关联多个仓库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add upstream git@gitlab.octinn.com:server/mobile.git</span><br></pre></td></tr></table></figure>
 
     
 
@@ -538,14 +553,6 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
-    
-        <a href="/2018/01/26/hello-world/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
     
 </nav>
 
@@ -631,7 +638,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -649,7 +656,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                
+                <a class="sidebar_archives-link" href="/categories/tool/">tool<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
