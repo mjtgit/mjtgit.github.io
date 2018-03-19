@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[七种css方式让一个容器水平垂直居中]]></title>
+    <url>%2F2017%2F11%2F27%2F%E4%B8%83%E7%A7%8Dcss%E6%96%B9%E5%BC%8F%E8%AE%A9%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%2F</url>
+    <content type="text"><![CDATA[方法简述方法一：position加margin方法二： diaplay:table-cell方法三：position加 transform方法四：flex;align-items: center;justify-content: center方法五：display:flex;margin:auto方法六：纯position方法七：兼容低版本浏览器，不固定宽高 方法一：position加margin（由于display:table-cell的原因，IE6\7不兼容）html123&lt;div class="wrap"&gt;&lt;div class="center"&gt;&lt;/div&gt;&lt;/div&gt; css1234567891011121314151617.wrap &#123; width: 200px; height: 200px; background: yellow; position: relative;&#125;.wrap .center &#123; width: 100px; height: 100px; background: green; margin: auto; position: absolute; left: 0; right: 0; top: 0; bottom: 0;&#125; 方法二：diaplay:table-cell（兼容性：由于display:table-cell的原因，IE6\7不兼容。）html12&lt;div class="wrap"&gt;&lt;div class="center"&gt;&lt;/div&gt; css123456789101112131415.wrap&#123; width: 200px; height: 200px; background: yellow; display: table-cell; vertical-align: middle; text-align: center;&#125;.center&#123; display: inline-block; vertical-align: middle; width: 100px; height: 100px; background: green;&#125; 方法三：position加transform（兼容性：ie9以下不支持transform，手机端表现的比较好。）html12&lt;div class="wrap"&gt;&lt;div class="center"&gt;&lt;/div&gt; css12345678910111213141516.wrap &#123; position: relative; background: yellow; width: 200px; height: 200px;&#125;.center &#123; position: absolute; background: green; top:50%; left:50%; -webkit-transform:translate(-50%,-50%); transform:translate(-50%,-50%); width: 100px; height: 100px;&#125; 方法四：flex;align-items:center;justify-content:center（移动端首选）html12&lt;div class="wrap"&gt;&lt;div class="center"&gt;&lt;/div&gt; css12345678910111213.wrap &#123; background: yellow; width: 200px; height: 200px; display: flex; align-items: center; justify-content: center;&#125;.center &#123; background: green; width: 100px; height: 100px;&#125; 方法五：display:flex;margin:auto（移动端首选）html12&lt;div class="wrap"&gt;&lt;div class="center"&gt;&lt;/div&gt; css123456789101112.wrap &#123; background: yellow; width: 200px; height: 200px; display: flex;&#125;.center &#123; background: green; width: 100px; height: 100px; margin: auto;&#125; 方法六：纯positionhtml12&lt;div class="wrap"&gt;&lt;div class="center"&gt;&lt;/div&gt; css1234567891011121314151617181920212223242526272829303132333435.wrap &#123; background: yellow; width: 200px; height: 200px; position: relative;&#125;// 方法一.center &#123; background: green; position: absolute; width: 100px; height: 100px; left: 50px; top: 50px;&#125;// 方法二.center &#123; background: green; position: absolute; width: 100px; height: 100px; left: 50%; top: 50%; margin-left:-50px; margin-top:-50px;&#125;兼容性：适用于所有浏览器方法六中的方法一计算公式如下：子元素（conter）的left值计算公式：left=(父元素的宽 - 子元素的宽 ) / 2=(200-100) / 2=50px;子元素（conter）的top值计算公式：top=(父元素的高 - 子元素的高 ) / 2=(200-100) / 2=50px;方法二计算公式：left值固定为50%;子元素的margin-left= -（子元素的宽/2）=-100/2= -50px;top值也一样，固定为50%子元素的margin-top= -（子元素的高/2）=-100/2= -50px; 方法七：兼容低版本浏览器，不固定宽高html12345&lt;div class="table"&gt; &lt;div class="tableCell"&gt; &lt;div class="content"&gt;不固定宽高，自适应&lt;/div&gt; &lt;/div&gt;&lt;/div&gt; css1234567891011121314151617181920212223.table &#123; height: 200px; //高度值不能少 width: 200px; //宽度值不能少 display: table; position: relative; float:left; background: yellow;&#125;.tableCell &#123; display: table-cell; vertical-align: middle; text-align: center; position: absolute; padding: 10px; top: 50%; left: 50%;&#125;.content &#123; position:relative; top: -50%; left: -50%; background: green;&#125;]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>居中</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[一些常用css样式]]></title>
+    <url>%2F2017%2F11%2F27%2F%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8css%E6%A0%B7%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[一些常用的css样式单行文字省略展示1234567.ellipsis&#123; overflow: hidden; white-space: nowrap; -ms-text-overflow: ellipsis; -o-text-overflow: ellipsis; text-overflow: ellipsis;&#125; 多行文字省略展示123456P&#123; overflow:hidden; display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical&#125; 伪类箭头123456789101112.form-go::after &#123; border-top: 2rpx solid #CACACA; border-right: 2rpx solid #CACACA; content: ""; width: 18rpx; height: 18rpx; position: absolute; top: 40%; right: 30rpx; transform: rotateZ(45deg); -webkit-transform: rotateZ(45deg);&#125; 兼容所有浏览器的清除浮动 用于父级1234567891011.clearfix:after &#123; visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0;&#125;.clearfix &#123; zoom: 1;&#125;]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>clearfix</tag>
+        <tag>ellipsis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[git 指令总结]]></title>
     <url>%2F2017%2F11%2F26%2Fgit-use%2F</url>
     <content type="text"><![CDATA[前言 &ensp;&ensp;git指令总结 本地(有内容)和远程(有内容)关联1234567echo &quot;# 仓库名&quot; &gt;&gt; README.mdgit initgit add .git commit -m &quot;first commit&quot;git remote add origin git@github.com:coderliaoyajun/仓库名.gitgit pull origin master --allow-unrelated-historiesgit push -u origin master 本地(无内容)和远程(无内容)关联123456echo &quot;# 仓库名&quot; &gt;&gt; README.mdgit initgit add .git commit -m &quot;first commit&quot;git remote add origin git@github.com:coderliaoyajun/仓库名.gitgit push -u origin master 本地(有内容)和远程(无内容)关联12git remote add origin git@github.com:coderliaoyajun/仓库名.gitgit push -u origin master 本地(无内容)和远程(有内容)关联1git clone git@github.com:coderliaoyajun/仓库名.git 仓库名 获取远程仓库分支（只是刷新远程分支）1git fetch origin 本地新建dev分支并切换到dev分支1git checkout -b dev 本地新建dev分支并切换到dev分支并同步远程的dev分支到这个分支1git checkout -b dev origin/dev 本地新建分支1git branch dev 切换分支1git checkout dev 将新分支发布在github上1git push origin dev 本地删除分支1git branch -d dev 远程端删除分支1git push origin :dev (分支名前的冒号代表删除) 合并dev分支到当前分支1git merge dev 撤销为保存到本地仓库的修改1git checkout assets/page/m/wechatredbag/wechatredbag.twig 关联多个仓库1git remote add upstream git@gitlab.octinn.com:server/mobile.git]]></content>
