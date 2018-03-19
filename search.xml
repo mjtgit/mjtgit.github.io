@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[post请求封装]]></title>
+    <url>%2F2017%2F11%2F28%2Fpost%E8%AF%B7%E6%B1%82%E5%B0%81%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[原生javaScript封装Ajax的post请求：1234567891011121314151617181920function post(url, param, callback) &#123; var xmlhttp = new XMLHttpRequest(); var paraStr = ''; xmlhttp.onreadystatechange = function () &#123; if (this.readyState == 4 &amp;&amp; this.status == 200) &#123; callback(JSON.parse(xmlhttp.responseText)); &#125; &#125;; xmlhttp.open('post', url, true); xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); xmlhttp.setRequestHeader("If-Modified-Since", "0"); //下面这行 请求为ajax xmlhttp.setRequestHeader("X-Requested-With","XMLHttpRequest"); for (key in param) &#123; paraStr += key + "=" + encodeURIComponent(param[key]) + "&amp;" &#125; paraStr = paraStr.substr(0, paraStr.length - 1); xmlhttp.send(paraStr);&#125;]]></content>
+      <categories>
+        <category>javaScript</category>
+      </categories>
+      <tags>
+        <tag>javaScript</tag>
+        <tag>ajax</tag>
+        <tag>post</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[时间戳转换为普通日期格式]]></title>
     <url>%2F2017%2F11%2F28%2F%E6%97%B6%E9%97%B4%E6%88%B3%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%99%AE%E9%80%9A%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[时间戳转换为普通日期格式第一种（格式：2010/12/23 上午10:53）A:12345function getLocalTime(nS) &#123; return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d&#123;1,2&#125;$/,' ');&#125;alert(getLocalTime(1293072805)); B:123function getLocalTime(nS) &#123; return new Date(parseInt(nS) * 1000).toLocaleString().substr(0,17)&#125;alert(getLocalTime(1293072805)); 第二种（格式：2070-1-15 13:56:39）1234567891011function formatDate(time) &#123; var now =new Date(time); var year=now.getFullYear(); var month=now.getMonth()+1; var date=now.getDate(); var hour=now.getHours(); var minute=now.getMinutes(); var second=now.getSeconds(); return year+"-"+month+"-"+date+" "+hour+":"+minute+":"+second;&#125;alert(formatDate(1230999938));]]></content>
