@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mjtgit.github.io/"/>
-  <updated>2018-03-22T08:44:18.000Z</updated>
+  <updated>2018-03-22T07:15:59.000Z</updated>
   <id>http://mjtgit.github.io/</id>
   
   <author>
@@ -15,28 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="http://mjtgit.github.io/2018/03/22/aa/"/>
-    <id>http://mjtgit.github.io/2018/03/22/aa/</id>
-    <published>2018-03-22T08:21:41.000Z</published>
-    <updated>2018-03-22T08:44:18.000Z</updated>
-    
-    <content type="html"><![CDATA[1.使用for(var j = 0;j<trans_goods_wrap.length;j++){ 200="" touchgoods(trans_goods_wrap[j],trans_goods[j]);="" }="" 2.封装方法="" function="" touchgoods(objwrap,obj){="" var="" start="0,old_left" =="" 0,trans="0,startTime;" objwrap.addeventlistener('touchstart',function(e){="" t="e.targetTouches[0];" old_left="" +="trans;" starttime="new" date();="" obj.style.webkittransition="all 0" ;="" });="" objwrap.addeventlistener('touchmove',function(e){="" e.preventdefault();="" e.stoppropagation();="" trans="t.pageX" -="" start;="" obj.style.webkittransform="translate3d(" (old_left="" trans)="" +'px,0,0)';="" objwrap.addeventlistener('touchend',function(){="" time="new" date()="" starttime;="" if(time="" <="" &&="" math.abs(trans)=""> 200){        if(trans > 0){            trans += window.innerWidth;        }else{            trans -= window.innerWidth;        }        obj.style.webkitTransform = 'translate3d('+ (old_left + trans) +'px,0,0)';        obj.style.webkitTransition = 'all 1s';    }    if(trans > 0 &&  trans + old_left > 0){        obj.style.webkitTransform = 'translate3d(0,0,0)';        obj.style.webkitTransition = 'all 1s';        old_left = 0;trans = 0;    }    if(trans < 0 &&   old_left + trans < (obj.scrollWidth- window.innerWidth)*(-1)){        obj.style.webkitTransform = 'translate3d(-'+(obj.scrollWidth - window.innerWidth)+'px,0,0)';        obj.style.webkitTransition = 'all 1s';        old_left = window.innerWidth - obj.scrollWidth;trans = 0;    }  });}</trans_goods_wrap.length;j++){>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        1.使用
-for(var j = 0;j&lt;trans_goods_wrap.length;j++){ 200=&quot;&quot; touchgoods(trans_goods_wrap[j],trans_goods[j]);=&quot;&quot; }=&quot;&quot; 2.封装方法=&quot;&quot; function=&quot;&quot; touc
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>倒计时js封装</title>
