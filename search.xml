@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[获取URL中参数的方法]]></title>
+    <url>%2F2017%2F12%2F02%2F%E8%8E%B7%E5%8F%96URL%E4%B8%AD%E5%8F%82%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[在开发中，时常会用到javascript来获取当前页面的url网址信息，在这里是我的一些获取url信息的小总结。方法一：正则法(1)12345678910111213function getQueryString(name) &#123; var reg = new RegExp('(^|&amp;)' + name + '=([^&amp;]*)(&amp;|$)', 'i'); var r = window.location.search.substr(1).match(reg); if (r != null) &#123; return unescape(r[2]); &#125; return null;&#125;// 这样调用：alert(GetQueryString("参数名1"));alert(GetQueryString("参数名2"));alert(GetQueryString("参数名3")); 正则法(2)123456789101112function GetQueryString(name) &#123; var reg = new RegExp("(^|&amp;)" + name + "=([^&amp;]*)(&amp;|$)", "i"); var r = window.location.search.substr(1).match(reg); //获取url中"?"符后的字符串并正则匹配 var context = ""; if (r != null) context = r[2]; reg = null; r = null; return context == null || context == "" || context == "undefined" ? "" : context;&#125;alert(GetQueryString("q")); 方法二：split拆分法1234567891011121314151617181920function GetRequest() &#123; var url = location.search; //获取url中"?"符后的字串 var theRequest = new Object(); if (url.indexOf("?") != -1) &#123; var str = url.substr(1); strs = str.split("&amp;"); for(var i = 0; i &lt; strs.length; i ++) &#123; theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]); &#125; &#125; return theRequest;&#125;var Request = new Object();Request = GetRequest();// var 参数1,参数2,参数3,参数N;// 参数1 = Request['参数1'];// 参数2 = Request['参数2'];// 参数3 = Request['参数3'];// 参数N = Request['参数N']; 方法三：单个参数的获取方法12345678function GetRequest() &#123; var url = location.search; //获取url中"?"符后的字串 if (url.indexOf("?") != -1) &#123; //判断是否有参数 var str = url.substr(1); //从第一个字符开始 因为第0个是?号 获取所有除问号的所有符串 strs = str.split("="); //用等号进行分隔 （因为知道只有一个参数 所以直接用等号进分隔 如果有多个参数 要用&amp;号分隔 再用等号进行分隔） alert(strs[1]); //直接弹出第一个参数 （如果有多个参数 还要进行循环的） &#125;&#125;]]></content>
+      <categories>
+        <category>javaScript</category>
+      </categories>
+      <tags>
+        <tag>javaScript</tag>
+        <tag>URL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[时间戳转换为普通日期格式]]></title>
     <url>%2F2017%2F11%2F28%2F%E6%97%B6%E9%97%B4%E6%88%B3%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%99%AE%E9%80%9A%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[时间戳转换为普通日期格式第一种（格式：2010/12/23 上午10:53）A:12345function getLocalTime(nS) &#123; return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d&#123;1,2&#125;$/,' ');&#125;alert(getLocalTime(1293072805)); B:123function getLocalTime(nS) &#123; return new Date(parseInt(nS) * 1000).toLocaleString().substr(0,17)&#125;alert(getLocalTime(1293072805)); 第二种（格式：2070-1-15 13:56:39）1234567891011function formatDate(time) &#123; var now =new Date(time); var year=now.getFullYear(); var month=now.getMonth()+1; var date=now.getDate(); var hour=now.getHours(); var minute=now.getMinutes(); var second=now.getSeconds(); return year+"-"+month+"-"+date+" "+hour+":"+minute+":"+second;&#125;alert(formatDate(1230999938));]]></content>
@@ -48,6 +60,19 @@
       <tags>
         <tag>工具</tag>
         <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[一些常用的js方法]]></title>
+    <url>%2F2017%2F11%2F24%2F%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84js%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[一些自己用到的方法，简单记录下，或许后面能用上！获取随机颜色1234567891011function getRandomColor () &#123; let rgb = [] for (let i = 0 ; i &lt; 3; ++i)&#123; let color = Math.floor(Math.random() * 256).toString(16) color = color.length == 1 ? '0' + color : color rgb.push(color) &#125; return '#' + rgb.join('')&#125;返回例子：#f684d5 判断是否为微信浏览器12345678function is_weixin()&#123; var ua = navigator.userAgent.toLowerCase(); if(ua.match(/MicroMessenger/i)=="micromessenger") &#123; return true; &#125; else &#123; return false; &#125;&#125; map()十进制颜色换换十六进制123456789101112131415161718var arr = [];var arr1 = [ &#123; name: 'name', color: 9803157 &#125;]let items = arr.concat(arr1.map(function(o) &#123; let c = '#'+ (o.color+0x10000).toString(16); o.color = c; return o; &#125;))返回示例： [&#123; color:"#969595", name:"name" &#125;] 先写这几个吧。。。]]></content>
+      <categories>
+        <category>javaScript</category>
+      </categories>
+      <tags>
+        <tag>javaScript</tag>
+        <tag>微信环境</tag>
+        <tag>随机颜色</tag>
       </tags>
   </entry>
   <entry>
