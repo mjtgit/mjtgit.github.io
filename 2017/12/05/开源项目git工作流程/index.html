@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/ma-small.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/ma-small.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/ma-small.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="工具,git," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="MJT's technical blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="由于开源项目每天都有多次代码部署，工作流程会有些不一样，所以在这记录下，分享给第一次参与的小伙伴。">
+<meta name="keywords" content="工具,git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开源项目git工作流程">
+<meta property="og:url" content="http://mjtgit.github.io/2017/12/05/开源项目git工作流程/index.html">
+<meta property="og:site_name" content="MJT&#39;s technical blog">
+<meta property="og:description" content="由于开源项目每天都有多次代码部署，工作流程会有些不一样，所以在这记录下，分享给第一次参与的小伙伴。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-27T04:11:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="开源项目git工作流程">
+<meta name="twitter:description" content="由于开源项目每天都有多次代码部署，工作流程会有些不一样，所以在这记录下，分享给第一次参与的小伙伴。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://mjtgit.github.io/2017/12/05/开源项目git工作流程/"/>
+
+
+
+
+
+  <title>开源项目git工作流程 | MJT's technical blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">MJT's technical blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mjtgit.github.io/2017/12/05/开源项目git工作流程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MJT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/ma.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MJT's technical blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">开源项目git工作流程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-05T11:23:33+08:00">
+                2017-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/05/开源项目git工作流程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/12/05/开源项目git工作流程/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="由于开源项目每天都有多次代码部署，工作流程会有些不一样，所以在这记录下，分享给第一次参与的小伙伴。"><a href="#由于开源项目每天都有多次代码部署，工作流程会有些不一样，所以在这记录下，分享给第一次参与的小伙伴。" class="headerlink" title="由于开源项目每天都有多次代码部署，工作流程会有些不一样，所以在这记录下，分享给第一次参与的小伙伴。"></a>由于开源项目每天都有多次代码部署，工作流程会有些不一样，所以在这记录下，分享给第一次参与的小伙伴。</h3><a id="more"></a>
+<h4 id="1-开源项目都有一个公共的git仓库-upstream-，参与项目的每个小伙伴-Developer-都有一个服务器上的个人仓库-origin"><a href="#1-开源项目都有一个公共的git仓库-upstream-，参与项目的每个小伙伴-Developer-都有一个服务器上的个人仓库-origin" class="headerlink" title="1.开源项目都有一个公共的git仓库(upstream)，参与项目的每个小伙伴(Developer)都有一个服务器上的个人仓库(origin)"></a>1.开源项目都有一个公共的git仓库(upstream)，参与项目的每个小伙伴(Developer)都有一个服务器上的个人仓库(origin)</h4><h4 id="2-新参与项目的小伙伴需要首先fork项目，也就是把项目在服务器上创建一个自己的拷贝，这个仓库拷贝作为一个公开的个人仓库。"><a href="#2-新参与项目的小伙伴需要首先fork项目，也就是把项目在服务器上创建一个自己的拷贝，这个仓库拷贝作为一个公开的个人仓库。" class="headerlink" title="2.新参与项目的小伙伴需要首先fork项目，也就是把项目在服务器上创建一个自己的拷贝，这个仓库拷贝作为一个公开的个人仓库。"></a>2.新参与项目的小伙伴需要首先fork项目，也就是把项目在服务器上创建一个自己的拷贝，这个仓库拷贝作为一个公开的个人仓库。</h4><h4 id="3-在创建了自己服务端拷贝之后，执行clone自己公开仓库到本地机器上，作为私有的开发环境。"><a href="#3-在创建了自己服务端拷贝之后，执行clone自己公开仓库到本地机器上，作为私有的开发环境。" class="headerlink" title="3.在创建了自己服务端拷贝之后，执行clone自己公开仓库到本地机器上，作为私有的开发环境。"></a>3.在创建了自己服务端拷贝之后，执行clone自己公开仓库到本地机器上，作为私有的开发环境。</h4><h4 id="4-要提交本地修改时，push提交到自己公开仓库中而不是公共仓库中。-然后给公共仓库发起一个-Merge-Request，让参与项目的小伙伴们知道有更新已经准备好合并了。"><a href="#4-要提交本地修改时，push提交到自己公开仓库中而不是公共仓库中。-然后给公共仓库发起一个-Merge-Request，让参与项目的小伙伴们知道有更新已经准备好合并了。" class="headerlink" title="4.要提交本地修改时，push提交到自己公开仓库中而不是公共仓库中。 然后给公共仓库发起一个 Merge Request，让参与项目的小伙伴们知道有更新已经准备好合并了。"></a>4.要提交本地修改时，push提交到自己公开仓库中而不是公共仓库中。 然后给公共仓库发起一个 Merge Request，让参与项目的小伙伴们知道有更新已经准备好合并了。</h4><h4 id="5-Merge-Request也是我们进行Code-Review的地方，这里我们可以对Merge-Request作者作出的变更进行讨论。作者要根据讨论作出相应的修改和变更。"><a href="#5-Merge-Request也是我们进行Code-Review的地方，这里我们可以对Merge-Request作者作出的变更进行讨论。作者要根据讨论作出相应的修改和变更。" class="headerlink" title="5.Merge Request也是我们进行Code Review的地方，这里我们可以对Merge Request作者作出的变更进行讨论。作者要根据讨论作出相应的修改和变更。"></a>5.Merge Request也是我们进行Code Review的地方，这里我们可以对Merge Request作者作出的变更进行讨论。作者要根据讨论作出相应的修改和变更。</h4><h4 id="6-讨论结束后，代码作者要将Merge-Request-Assign给一名负责这个项目的小伙伴-Master-，负责项目的小伙伴根据Review情况确定是要Accept这个Merge-Request。"><a href="#6-讨论结束后，代码作者要将Merge-Request-Assign给一名负责这个项目的小伙伴-Master-，负责项目的小伙伴根据Review情况确定是要Accept这个Merge-Request。" class="headerlink" title="6.讨论结束后，代码作者要将Merge Request Assign给一名负责这个项目的小伙伴(Master)，负责项目的小伙伴根据Review情况确定是要Accept这个Merge Request。"></a>6.讨论结束后，代码作者要将Merge Request Assign给一名负责这个项目的小伙伴(Master)，负责项目的小伙伴根据Review情况确定是要Accept这个Merge Request。</h4><h4 id="7-Merge-Request被合并后就成为了项目的一部分，项目中其他的小伙伴应该执行pull操作将自己的本地仓库与公共仓库做同步。"><a href="#7-Merge-Request被合并后就成为了项目的一部分，项目中其他的小伙伴应该执行pull操作将自己的本地仓库与公共仓库做同步。" class="headerlink" title="7.Merge Request被合并后就成为了项目的一部分，项目中其他的小伙伴应该执行pull操作将自己的本地仓库与公共仓库做同步。"></a>7.Merge Request被合并后就成为了项目的一部分，项目中其他的小伙伴应该执行pull操作将自己的本地仓库与公共仓库做同步。</h4><hr>
+<h3 id="举个例子-以下代码仓库是拿我公司仓库为例，需要VPN，所以大家不能测试"><a href="#举个例子-以下代码仓库是拿我公司仓库为例，需要VPN，所以大家不能测试" class="headerlink" title="举个例子(以下代码仓库是拿我公司仓库为例，需要VPN，所以大家不能测试)"></a>举个例子(以下代码仓库是拿我公司仓库为例，需要VPN，所以大家不能测试)</h3><h4 id="1-在GitLab中fork公共仓库到个人仓库并clone到本地开发环境-下面以server-mobile-git项目为例"><a href="#1-在GitLab中fork公共仓库到个人仓库并clone到本地开发环境-下面以server-mobile-git项目为例" class="headerlink" title="1.在GitLab中fork公共仓库到个人仓库并clone到本地开发环境 下面以server/mobile.git项目为例"></a>1.在GitLab中fork公共仓库到个人仓库并clone到本地开发环境 下面以server/mobile.git项目为例</h4><h5 id="a-访问项目公共仓库的git-gitlab-octinn-com-server-mobile-git-的GitLab页面-https-gitlab-octinn-com-server-mobile-点击页面中间按钮Fork，得到了服务器上个人仓库-git-gitlab-octinn-com-majiangtao-mobile-git"><a href="#a-访问项目公共仓库的git-gitlab-octinn-com-server-mobile-git-的GitLab页面-https-gitlab-octinn-com-server-mobile-点击页面中间按钮Fork，得到了服务器上个人仓库-git-gitlab-octinn-com-majiangtao-mobile-git" class="headerlink" title="a.访问项目公共仓库的git@gitlab.octinn.com:server/mobile.git 的GitLab页面 https://gitlab.octinn.com/server/mobile 点击页面中间按钮Fork，得到了服务器上个人仓库 git@gitlab.octinn.com:majiangtao/mobile.git"></a>a.访问项目公共仓库的git@gitlab.octinn.com:server/mobile.git 的GitLab页面 <a href="https://gitlab.octinn.com/server/mobile" target="_blank" rel="noopener">https://gitlab.octinn.com/server/mobile</a> 点击页面中间按钮Fork，得到了服务器上个人仓库 git@gitlab.octinn.com:majiangtao/mobile.git</h5><h5 id="b-在你本地开发机上-执行-git-clone-git-gitlab-octinn-com-server-mobile-git-将服务器上的公共仓库clone到本地"><a href="#b-在你本地开发机上-执行-git-clone-git-gitlab-octinn-com-server-mobile-git-将服务器上的公共仓库clone到本地" class="headerlink" title="b.在你本地开发机上 执行 git clone git@gitlab.octinn.com:server/mobile.git 将服务器上的公共仓库clone到本地"></a>b.在你本地开发机上 执行 git clone git@gitlab.octinn.com:server/mobile.git 将服务器上的公共仓库clone到本地</h5><h5 id="c-在你本地开发机上-执行-git-remote-set-url-–push-origin-git-gitlab-octinn-com-majiangtao-mobile-git-将本地remote的push地址为修改个人项目远程仓库的地址"><a href="#c-在你本地开发机上-执行-git-remote-set-url-–push-origin-git-gitlab-octinn-com-majiangtao-mobile-git-将本地remote的push地址为修改个人项目远程仓库的地址" class="headerlink" title="c.在你本地开发机上 执行 git remote set-url –push origin git@gitlab.octinn.com:majiangtao/mobile.git 将本地remote的push地址为修改个人项目远程仓库的地址"></a>c.在你本地开发机上 执行 git remote set-url –push origin git@gitlab.octinn.com:majiangtao/mobile.git 将本地remote的push地址为修改个人项目远程仓库的地址</h5><h5 id="d-上述步骤执行完成厚-git-remote-v的输出应该类似"><a href="#d-上述步骤执行完成厚-git-remote-v的输出应该类似" class="headerlink" title="d.上述步骤执行完成厚 git remote -v的输出应该类似:"></a>d.上述步骤执行完成厚 git remote -v的输出应该类似:</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">origin git@gitlab.octinn.com:majiangtao/mobile.git (push)</span><br><span class="line">origin git@gitlab.octinn.com:server/mobile.git (fetch)</span><br></pre></td></tr></table></figure>
+<h4 id="2-在开始修改代码前，要根据需求创建一个新分支，这里并不区分是功能分支还是补丁分支。后面会用这个分支作为Merge-Request的源分支。"><a href="#2-在开始修改代码前，要根据需求创建一个新分支，这里并不区分是功能分支还是补丁分支。后面会用这个分支作为Merge-Request的源分支。" class="headerlink" title="2.在开始修改代码前，要根据需求创建一个新分支，这里并不区分是功能分支还是补丁分支。后面会用这个分支作为Merge Request的源分支。"></a>2.在开始修改代码前，要根据需求创建一个新分支，这里并不区分是功能分支还是补丁分支。后面会用这个分支作为Merge Request的源分支。</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b some-feature</span><br><span class="line">// 编辑代码</span><br><span class="line">git commit -a -m <span class="string">"Add first draft of some feature"</span></span><br></pre></td></tr></table></figure>
+<h4 id="在新功能分支上，可能按需要添加提交。如果觉得功能分支上的提交历史太乱了，可以用rebase-i来整理历史提交。-对于大型项目，整理功能分支的历史可以让其他人更容易看出在Merge-Request中做了什么内容。在把代码push到个人仓库中之前，所有的变更都是完全私有的。这时如果公共仓库有了其他的提交，可以通过git-pull来更新。"><a href="#在新功能分支上，可能按需要添加提交。如果觉得功能分支上的提交历史太乱了，可以用rebase-i来整理历史提交。-对于大型项目，整理功能分支的历史可以让其他人更容易看出在Merge-Request中做了什么内容。在把代码push到个人仓库中之前，所有的变更都是完全私有的。这时如果公共仓库有了其他的提交，可以通过git-pull来更新。" class="headerlink" title="在新功能分支上，可能按需要添加提交。如果觉得功能分支上的提交历史太乱了，可以用rebase -i来整理历史提交。 对于大型项目，整理功能分支的历史可以让其他人更容易看出在Merge Request中做了什么内容。在把代码push到个人仓库中之前，所有的变更都是完全私有的。这时如果公共仓库有了其他的提交，可以通过git pull来更新。"></a>在新功能分支上，可能按需要添加提交。如果觉得功能分支上的提交历史太乱了，可以用rebase -i来整理历史提交。 对于大型项目，整理功能分支的历史可以让其他人更容易看出在Merge Request中做了什么内容。在把代码push到个人仓库中之前，所有的变更都是完全私有的。这时如果公共仓库有了其他的提交，可以通过git pull来更新。</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+<h4 id="因为所有的开发工作都是在特定分支里进行的，理论上这个动作只会产生一次快进；如果这里产生了冲突，请自行解决冲突。"><a href="#因为所有的开发工作都是在特定分支里进行的，理论上这个动作只会产生一次快进；如果这里产生了冲突，请自行解决冲突。" class="headerlink" title="因为所有的开发工作都是在特定分支里进行的，理论上这个动作只会产生一次快进；如果这里产生了冲突，请自行解决冲突。"></a>因为所有的开发工作都是在特定分支里进行的，理论上这个动作只会产生一次快进；如果这里产生了冲突，<a href="https://www.jetbrains.com/help/idea/resolving-conflicts.html" target="_blank" rel="noopener">请自行解决冲突</a>。</h4><h4 id="3-新分支开发完成后，或需要讨论的时候，push功能到自己的个人仓库中（不是公共仓库）"><a href="#3-新分支开发完成后，或需要讨论的时候，push功能到自己的个人仓库中（不是公共仓库）" class="headerlink" title="3.新分支开发完成后，或需要讨论的时候，push功能到自己的个人仓库中（不是公共仓库）"></a>3.新分支开发完成后，或需要讨论的时候，push功能到自己的个人仓库中（不是公共仓库）</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin some-branch</span><br></pre></td></tr></table></figure>
+<h4 id="4-发起Merge-Request并邀请其他小伙伴做Code-Review"><a href="#4-发起Merge-Request并邀请其他小伙伴做Code-Review" class="headerlink" title="4.发起Merge Request并邀请其他小伙伴做Code Review"></a>4.发起Merge Request并邀请其他小伙伴做Code Review</h4><h5 id="a-访问个人仓库的GitLab页面-https-git-gitlab-octinn-com-majiangtao-mobile-git"><a href="#a-访问个人仓库的GitLab页面-https-git-gitlab-octinn-com-majiangtao-mobile-git" class="headerlink" title="a.访问个人仓库的GitLab页面  https://git@gitlab.octinn.com:majiangtao/mobile.git"></a>a.访问个人仓库的GitLab页面  <a href="https://git@gitlab.octinn.com:majiangtao/mobile.git" target="_blank" rel="noopener">https://git@gitlab.octinn.com:majiangtao/mobile.git</a></h5><h5 id="b-常规情况下页面上方会出现一个按钮提示你发起Merge-Request，如果没有，也不要慌张，页面右边导航有“Merge-Requests”菜单-点进去有”-New-Merge-Request”按钮，点击可以创建新的Merge-Request。"><a href="#b-常规情况下页面上方会出现一个按钮提示你发起Merge-Request，如果没有，也不要慌张，页面右边导航有“Merge-Requests”菜单-点进去有”-New-Merge-Request”按钮，点击可以创建新的Merge-Request。" class="headerlink" title="b.常规情况下页面上方会出现一个按钮提示你发起Merge Request，如果没有，也不要慌张，页面右边导航有“Merge Requests”菜单 点进去有”+New Merge Request”按钮，点击可以创建新的Merge Request。"></a>b.常规情况下页面上方会出现一个按钮提示你发起Merge Request，如果没有，也不要慌张，页面右边导航有“Merge Requests”菜单 点进去有”+New Merge Request”按钮，点击可以创建新的Merge Request。</h5><h5 id="c-在创建Merge-Request的表单中-添加自己的个人仓库为源仓库，新的特性分支为源分支，公共仓库为目标仓库，公共仓库的master为目标分支。"><a href="#c-在创建Merge-Request的表单中-添加自己的个人仓库为源仓库，新的特性分支为源分支，公共仓库为目标仓库，公共仓库的master为目标分支。" class="headerlink" title="c.在创建Merge Request的表单中 添加自己的个人仓库为源仓库，新的特性分支为源分支，公共仓库为目标仓库，公共仓库的master为目标分支。"></a>c.在创建Merge Request的表单中 添加自己的个人仓库为源仓库，新的特性分支为源分支，公共仓库为目标仓库，公共仓库的master为目标分支。</h5><h5 id="d-确定源仓库、源分支、目标仓库、目标分支无误的情况下查看Changes确定变更的内容，填写Merge-Request的标题-Title-和描述-Description-，标题和描述应该清晰明了的解释这个Merge-Request做了什么，也可以给一些提示信息，以便于做Review的小伙伴知道这是要干啥。"><a href="#d-确定源仓库、源分支、目标仓库、目标分支无误的情况下查看Changes确定变更的内容，填写Merge-Request的标题-Title-和描述-Description-，标题和描述应该清晰明了的解释这个Merge-Request做了什么，也可以给一些提示信息，以便于做Review的小伙伴知道这是要干啥。" class="headerlink" title="d.确定源仓库、源分支、目标仓库、目标分支无误的情况下查看Changes确定变更的内容，填写Merge Request的标题(Title)和描述(Description)，标题和描述应该清晰明了的解释这个Merge Request做了什么，也可以给一些提示信息，以便于做Review的小伙伴知道这是要干啥。"></a>d.确定源仓库、源分支、目标仓库、目标分支无误的情况下查看Changes确定变更的内容，填写Merge Request的标题(Title)和描述(Description)，标题和描述应该清晰明了的解释这个Merge Request做了什么，也可以给一些提示信息，以便于做Review的小伙伴知道这是要干啥。</h5><h4 id="5-Review-Merge-Request"><a href="#5-Review-Merge-Request" class="headerlink" title="5.Review Merge Request"></a>5.Review Merge Request</h4><h5 id="a-在我们在参与的项目GitLab页面中可以看到这个项目所有人发起的Merge-Requests-，点击每个Merge-Request会显示出描述、功能的提交历史和每个变更的差异-diff-，参与Review的小伙伴就可以在这里发表意见了。"><a href="#a-在我们在参与的项目GitLab页面中可以看到这个项目所有人发起的Merge-Requests-，点击每个Merge-Request会显示出描述、功能的提交历史和每个变更的差异-diff-，参与Review的小伙伴就可以在这里发表意见了。" class="headerlink" title="a.在我们在参与的项目GitLab页面中可以看到这个项目所有人发起的Merge Requests ，点击每个Merge Request会显示出描述、功能的提交历史和每个变更的差异(diff)，参与Review的小伙伴就可以在这里发表意见了。"></a>a.在我们在参与的项目GitLab页面中可以看到这个项目所有人发起的Merge Requests ，点击每个Merge Request会显示出描述、功能的提交历史和每个变更的差异(diff)，参与Review的小伙伴就可以在这里发表意见了。</h5><h5 id="b-如果你发现了代码中的问题，请留下具体的信息-改进的意见，并要求作者在合并前修复问题。"><a href="#b-如果你发现了代码中的问题，请留下具体的信息-改进的意见，并要求作者在合并前修复问题。" class="headerlink" title="b.如果你发现了代码中的问题，请留下具体的信息/改进的意见，并要求作者在合并前修复问题。"></a>b.如果你发现了代码中的问题，请留下具体的信息/改进的意见，并要求作者在合并前修复问题。</h5><h5 id="c-评论可以针对整个Merge-Request，也可以针对其中的某一次Commit，或针对变更中的某一行或一块儿代码片段。"><a href="#c-评论可以针对整个Merge-Request，也可以针对其中的某一次Commit，或针对变更中的某一行或一块儿代码片段。" class="headerlink" title="c.评论可以针对整个Merge Request，也可以针对其中的某一次Commit，或针对变更中的某一行或一块儿代码片段。"></a>c.评论可以针对整个Merge Request，也可以针对其中的某一次Commit，或针对变更中的某一行或一块儿代码片段。</h5><h5 id="d-Code-Review不应该成为保证代码风格和编码标准的手段。编码风格和代码规范都属于死的东西，每个程序员在把自己的代码提交团队Review的时候，代码就应该是符合规范的，这是默认值，属于每个人自己的事情，不应该交由团队来完成，否则只会浪费大家本来就不够的时间，有很多工具可以帮我们完成这件事。"><a href="#d-Code-Review不应该成为保证代码风格和编码标准的手段。编码风格和代码规范都属于死的东西，每个程序员在把自己的代码提交团队Review的时候，代码就应该是符合规范的，这是默认值，属于每个人自己的事情，不应该交由团队来完成，否则只会浪费大家本来就不够的时间，有很多工具可以帮我们完成这件事。" class="headerlink" title="d.Code Review不应该成为保证代码风格和编码标准的手段。编码风格和代码规范都属于死的东西，每个程序员在把自己的代码提交团队Review的时候，代码就应该是符合规范的，这是默认值，属于每个人自己的事情，不应该交由团队来完成，否则只会浪费大家本来就不够的时间，有很多工具可以帮我们完成这件事。"></a>d.Code Review不应该成为保证代码风格和编码标准的手段。编码风格和代码规范都属于死的东西，每个程序员在把自己的代码提交团队Review的时候，代码就应该是符合规范的，这是默认值，属于每个人自己的事情，不应该交由团队来完成，否则只会浪费大家本来就不够的时间，有很多工具可以帮我们完成这件事。</h5><h5 id="e-Code-Review不应该承担发现代码错误的职责。Code-Review主要是审核代码的质量，如可读性，可维护性，以及程序的逻辑和对需求和设计的实现。"><a href="#e-Code-Review不应该承担发现代码错误的职责。Code-Review主要是审核代码的质量，如可读性，可维护性，以及程序的逻辑和对需求和设计的实现。" class="headerlink" title="e.Code Review不应该承担发现代码错误的职责。Code Review主要是审核代码的质量，如可读性，可维护性，以及程序的逻辑和对需求和设计的实现。"></a>e.Code Review不应该承担发现代码错误的职责。Code Review主要是审核代码的质量，如可读性，可维护性，以及程序的逻辑和对需求和设计的实现。</h5><h5 id="f-Code-Review的实质是确认代码能够正确的运行，发现安全漏洞、功能错误、代码错误、设计失误、安全验证和防范、恶意代码等。"><a href="#f-Code-Review的实质是确认代码能够正确的运行，发现安全漏洞、功能错误、代码错误、设计失误、安全验证和防范、恶意代码等。" class="headerlink" title="f.Code Review的实质是确认代码能够正确的运行，发现安全漏洞、功能错误、代码错误、设计失误、安全验证和防范、恶意代码等。"></a>f.Code Review的实质是确认代码能够正确的运行，发现安全漏洞、功能错误、代码错误、设计失误、安全验证和防范、恶意代码等。</h5><h5 id="g-Code-Review的重点应该放在高风险的代码和容易引起高风险的修改或者重构的代码上。旧而复杂、处理敏感数据、处理重要业务逻辑和流程、大规模重构以及刚加入团队的开发者实现的代码都是审查的重点。"><a href="#g-Code-Review的重点应该放在高风险的代码和容易引起高风险的修改或者重构的代码上。旧而复杂、处理敏感数据、处理重要业务逻辑和流程、大规模重构以及刚加入团队的开发者实现的代码都是审查的重点。" class="headerlink" title="g.Code Review的重点应该放在高风险的代码和容易引起高风险的修改或者重构的代码上。旧而复杂、处理敏感数据、处理重要业务逻辑和流程、大规模重构以及刚加入团队的开发者实现的代码都是审查的重点。"></a>g.Code Review的重点应该放在高风险的代码和容易引起高风险的修改或者重构的代码上。旧而复杂、处理敏感数据、处理重要业务逻辑和流程、大规模重构以及刚加入团队的开发者实现的代码都是审查的重点。</h5><h5 id="h-确定不能通过Review的Merge-Request包括但不限于产生了冲突、语法错误、重大的逻辑缺陷等。"><a href="#h-确定不能通过Review的Merge-Request包括但不限于产生了冲突、语法错误、重大的逻辑缺陷等。" class="headerlink" title="h.确定不能通过Review的Merge Request包括但不限于产生了冲突、语法错误、重大的逻辑缺陷等。"></a>h.确定不能通过Review的Merge Request包括但不限于产生了冲突、语法错误、重大的逻辑缺陷等。</h5><h5 id="i-在Review之后需要留下你的意见，如果Review通过，请留下评论”lgtm”-looks-good-to-me-；如果不通过，也请在评论中留下理由。"><a href="#i-在Review之后需要留下你的意见，如果Review通过，请留下评论”lgtm”-looks-good-to-me-；如果不通过，也请在评论中留下理由。" class="headerlink" title="i.在Review之后需要留下你的意见，如果Review通过，请留下评论”lgtm”(looks good to me)；如果不通过，也请在评论中留下理由。"></a>i.在Review之后需要留下你的意见，如果Review通过，请留下评论”lgtm”(looks good to me)；如果不通过，也请在评论中留下理由。</h5><h4 id="6-补加提交和再次Review"><a href="#6-补加提交和再次Review" class="headerlink" title="6.补加提交和再次Review"></a>6.补加提交和再次Review</h4><h5 id="a-如果Merge-Request作者对反馈有任何疑问，可以在Merge-Request中响应，把Merge-Request当作是论坛用就可以。"><a href="#a-如果Merge-Request作者对反馈有任何疑问，可以在Merge-Request中响应，把Merge-Request当作是论坛用就可以。" class="headerlink" title="a.如果Merge Request作者对反馈有任何疑问，可以在Merge Request中响应，把Merge Request当作是论坛用就可以。"></a>a.如果Merge Request作者对反馈有任何疑问，可以在Merge Request中响应，把Merge Request当作是论坛用就可以。</h5><h5 id="b-在Merge-Request被Accept或Close之前，Merge-Request的作者可以再次提交代码并push到个人仓库，就像上一轮中的做法一样。这些新的提交会自动进入Merge-Request，其他小伙伴可以再次review变更。"><a href="#b-在Merge-Request被Accept或Close之前，Merge-Request的作者可以再次提交代码并push到个人仓库，就像上一轮中的做法一样。这些新的提交会自动进入Merge-Request，其他小伙伴可以再次review变更。" class="headerlink" title="b.在Merge Request被Accept或Close之前，Merge Request的作者可以再次提交代码并push到个人仓库，就像上一轮中的做法一样。这些新的提交会自动进入Merge Request，其他小伙伴可以再次review变更。"></a>b.在Merge Request被Accept或Close之前，Merge Request的作者可以再次提交代码并push到个人仓库，就像上一轮中的做法一样。这些新的提交会自动进入Merge Request，其他小伙伴可以再次review变更。</h5><h5 id="c-重复上述步骤直到Review被至少两位小伙伴通过。"><a href="#c-重复上述步骤直到Review被至少两位小伙伴通过。" class="headerlink" title="c.重复上述步骤直到Review被至少两位小伙伴通过。"></a>c.重复上述步骤直到Review被至少两位小伙伴通过。</h5><h5 id="d-Merge-Request的作者将Merge-Request-Assign给负责项目的小伙伴-Master-。"><a href="#d-Merge-Request的作者将Merge-Request-Assign给负责项目的小伙伴-Master-。" class="headerlink" title="d.Merge Request的作者将Merge Request Assign给负责项目的小伙伴(Master)。"></a>d.Merge Request的作者将Merge Request Assign给负责项目的小伙伴(Master)。</h5><h4 id="7-Accept-Merge-Request"><a href="#7-Accept-Merge-Request" class="headerlink" title="7.Accept Merge Request"></a>7.Accept Merge Request</h4><h5 id="a-负责项目的小伙伴-Master-根据Review情况确定是要Accept还是Close这个Merge-Request。"><a href="#a-负责项目的小伙伴-Master-根据Review情况确定是要Accept还是Close这个Merge-Request。" class="headerlink" title="a.负责项目的小伙伴(Master)根据Review情况确定是要Accept还是Close这个Merge Request。"></a>a.负责项目的小伙伴(Master)根据Review情况确定是要Accept还是Close这个Merge Request。</h5><h4 id="8-从公共仓库同步代码"><a href="#8-从公共仓库同步代码" class="headerlink" title="8.从公共仓库同步代码"></a>8.从公共仓库同步代码</h4><h4 id="公共仓库中的代码会不停的更新，其他人必须主动从公共仓库同步代码："><a href="#公共仓库中的代码会不停的更新，其他人必须主动从公共仓库同步代码：" class="headerlink" title="公共仓库中的代码会不停的更新，其他人必须主动从公共仓库同步代码："></a>公共仓库中的代码会不停的更新，其他人必须主动从公共仓库同步代码：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/工具/" rel="tag"><i class="fa fa-tag"></i> 工具</a>
+          
+            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/04/倒计时js封装/" rel="next" title="倒计时js封装">
+                <i class="fa fa-chevron-left"></i> 倒计时js封装
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/ma.jpg"
+                alt="MJT" />
+            
+              <p class="site-author-name" itemprop="name">MJT</p>
+              <p class="site-description motion-element" itemprop="description">记录自己的技术成长......</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/mjtgit" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:mjt2015@sina.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                前端相关链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://alloyteam.github.io/CodeGuide/" title="代码规范" target="_blank">代码规范</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#由于开源项目每天都有多次代码部署，工作流程会有些不一样，所以在这记录下，分享给第一次参与的小伙伴。"><span class="nav-number">1.</span> <span class="nav-text">由于开源项目每天都有多次代码部署，工作流程会有些不一样，所以在这记录下，分享给第一次参与的小伙伴。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-开源项目都有一个公共的git仓库-upstream-，参与项目的每个小伙伴-Developer-都有一个服务器上的个人仓库-origin"><span class="nav-number">1.1.</span> <span class="nav-text">1.开源项目都有一个公共的git仓库(upstream)，参与项目的每个小伙伴(Developer)都有一个服务器上的个人仓库(origin)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-新参与项目的小伙伴需要首先fork项目，也就是把项目在服务器上创建一个自己的拷贝，这个仓库拷贝作为一个公开的个人仓库。"><span class="nav-number">1.2.</span> <span class="nav-text">2.新参与项目的小伙伴需要首先fork项目，也就是把项目在服务器上创建一个自己的拷贝，这个仓库拷贝作为一个公开的个人仓库。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-在创建了自己服务端拷贝之后，执行clone自己公开仓库到本地机器上，作为私有的开发环境。"><span class="nav-number">1.3.</span> <span class="nav-text">3.在创建了自己服务端拷贝之后，执行clone自己公开仓库到本地机器上，作为私有的开发环境。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-要提交本地修改时，push提交到自己公开仓库中而不是公共仓库中。-然后给公共仓库发起一个-Merge-Request，让参与项目的小伙伴们知道有更新已经准备好合并了。"><span class="nav-number">1.4.</span> <span class="nav-text">4.要提交本地修改时，push提交到自己公开仓库中而不是公共仓库中。 然后给公共仓库发起一个 Merge Request，让参与项目的小伙伴们知道有更新已经准备好合并了。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Merge-Request也是我们进行Code-Review的地方，这里我们可以对Merge-Request作者作出的变更进行讨论。作者要根据讨论作出相应的修改和变更。"><span class="nav-number">1.5.</span> <span class="nav-text">5.Merge Request也是我们进行Code Review的地方，这里我们可以对Merge Request作者作出的变更进行讨论。作者要根据讨论作出相应的修改和变更。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-讨论结束后，代码作者要将Merge-Request-Assign给一名负责这个项目的小伙伴-Master-，负责项目的小伙伴根据Review情况确定是要Accept这个Merge-Request。"><span class="nav-number">1.6.</span> <span class="nav-text">6.讨论结束后，代码作者要将Merge Request Assign给一名负责这个项目的小伙伴(Master)，负责项目的小伙伴根据Review情况确定是要Accept这个Merge Request。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-Merge-Request被合并后就成为了项目的一部分，项目中其他的小伙伴应该执行pull操作将自己的本地仓库与公共仓库做同步。"><span class="nav-number">1.7.</span> <span class="nav-text">7.Merge Request被合并后就成为了项目的一部分，项目中其他的小伙伴应该执行pull操作将自己的本地仓库与公共仓库做同步。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#举个例子-以下代码仓库是拿我公司仓库为例，需要VPN，所以大家不能测试"><span class="nav-number">2.</span> <span class="nav-text">举个例子(以下代码仓库是拿我公司仓库为例，需要VPN，所以大家不能测试)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-在GitLab中fork公共仓库到个人仓库并clone到本地开发环境-下面以server-mobile-git项目为例"><span class="nav-number">2.1.</span> <span class="nav-text">1.在GitLab中fork公共仓库到个人仓库并clone到本地开发环境 下面以server/mobile.git项目为例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#a-访问项目公共仓库的git-gitlab-octinn-com-server-mobile-git-的GitLab页面-https-gitlab-octinn-com-server-mobile-点击页面中间按钮Fork，得到了服务器上个人仓库-git-gitlab-octinn-com-majiangtao-mobile-git"><span class="nav-number">2.1.1.</span> <span class="nav-text">a.访问项目公共仓库的git@gitlab.octinn.com:server/mobile.git 的GitLab页面 https://gitlab.octinn.com/server/mobile 点击页面中间按钮Fork，得到了服务器上个人仓库 git@gitlab.octinn.com:majiangtao/mobile.git</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#b-在你本地开发机上-执行-git-clone-git-gitlab-octinn-com-server-mobile-git-将服务器上的公共仓库clone到本地"><span class="nav-number">2.1.2.</span> <span class="nav-text">b.在你本地开发机上 执行 git clone git@gitlab.octinn.com:server/mobile.git 将服务器上的公共仓库clone到本地</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#c-在你本地开发机上-执行-git-remote-set-url-–push-origin-git-gitlab-octinn-com-majiangtao-mobile-git-将本地remote的push地址为修改个人项目远程仓库的地址"><span class="nav-number">2.1.3.</span> <span class="nav-text">c.在你本地开发机上 执行 git remote set-url –push origin git@gitlab.octinn.com:majiangtao/mobile.git 将本地remote的push地址为修改个人项目远程仓库的地址</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#d-上述步骤执行完成厚-git-remote-v的输出应该类似"><span class="nav-number">2.1.4.</span> <span class="nav-text">d.上述步骤执行完成厚 git remote -v的输出应该类似:</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-在开始修改代码前，要根据需求创建一个新分支，这里并不区分是功能分支还是补丁分支。后面会用这个分支作为Merge-Request的源分支。"><span class="nav-number">2.2.</span> <span class="nav-text">2.在开始修改代码前，要根据需求创建一个新分支，这里并不区分是功能分支还是补丁分支。后面会用这个分支作为Merge Request的源分支。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在新功能分支上，可能按需要添加提交。如果觉得功能分支上的提交历史太乱了，可以用rebase-i来整理历史提交。-对于大型项目，整理功能分支的历史可以让其他人更容易看出在Merge-Request中做了什么内容。在把代码push到个人仓库中之前，所有的变更都是完全私有的。这时如果公共仓库有了其他的提交，可以通过git-pull来更新。"><span class="nav-number">2.3.</span> <span class="nav-text">在新功能分支上，可能按需要添加提交。如果觉得功能分支上的提交历史太乱了，可以用rebase -i来整理历史提交。 对于大型项目，整理功能分支的历史可以让其他人更容易看出在Merge Request中做了什么内容。在把代码push到个人仓库中之前，所有的变更都是完全私有的。这时如果公共仓库有了其他的提交，可以通过git pull来更新。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#因为所有的开发工作都是在特定分支里进行的，理论上这个动作只会产生一次快进；如果这里产生了冲突，请自行解决冲突。"><span class="nav-number">2.4.</span> <span class="nav-text">因为所有的开发工作都是在特定分支里进行的，理论上这个动作只会产生一次快进；如果这里产生了冲突，请自行解决冲突。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-新分支开发完成后，或需要讨论的时候，push功能到自己的个人仓库中（不是公共仓库）"><span class="nav-number">2.5.</span> <span class="nav-text">3.新分支开发完成后，或需要讨论的时候，push功能到自己的个人仓库中（不是公共仓库）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-发起Merge-Request并邀请其他小伙伴做Code-Review"><span class="nav-number">2.6.</span> <span class="nav-text">4.发起Merge Request并邀请其他小伙伴做Code Review</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#a-访问个人仓库的GitLab页面-https-git-gitlab-octinn-com-majiangtao-mobile-git"><span class="nav-number">2.6.1.</span> <span class="nav-text">a.访问个人仓库的GitLab页面  https://git@gitlab.octinn.com:majiangtao/mobile.git</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#b-常规情况下页面上方会出现一个按钮提示你发起Merge-Request，如果没有，也不要慌张，页面右边导航有“Merge-Requests”菜单-点进去有”-New-Merge-Request”按钮，点击可以创建新的Merge-Request。"><span class="nav-number">2.6.2.</span> <span class="nav-text">b.常规情况下页面上方会出现一个按钮提示你发起Merge Request，如果没有，也不要慌张，页面右边导航有“Merge Requests”菜单 点进去有”+New Merge Request”按钮，点击可以创建新的Merge Request。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#c-在创建Merge-Request的表单中-添加自己的个人仓库为源仓库，新的特性分支为源分支，公共仓库为目标仓库，公共仓库的master为目标分支。"><span class="nav-number">2.6.3.</span> <span class="nav-text">c.在创建Merge Request的表单中 添加自己的个人仓库为源仓库，新的特性分支为源分支，公共仓库为目标仓库，公共仓库的master为目标分支。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#d-确定源仓库、源分支、目标仓库、目标分支无误的情况下查看Changes确定变更的内容，填写Merge-Request的标题-Title-和描述-Description-，标题和描述应该清晰明了的解释这个Merge-Request做了什么，也可以给一些提示信息，以便于做Review的小伙伴知道这是要干啥。"><span class="nav-number">2.6.4.</span> <span class="nav-text">d.确定源仓库、源分支、目标仓库、目标分支无误的情况下查看Changes确定变更的内容，填写Merge Request的标题(Title)和描述(Description)，标题和描述应该清晰明了的解释这个Merge Request做了什么，也可以给一些提示信息，以便于做Review的小伙伴知道这是要干啥。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Review-Merge-Request"><span class="nav-number">2.7.</span> <span class="nav-text">5.Review Merge Request</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#a-在我们在参与的项目GitLab页面中可以看到这个项目所有人发起的Merge-Requests-，点击每个Merge-Request会显示出描述、功能的提交历史和每个变更的差异-diff-，参与Review的小伙伴就可以在这里发表意见了。"><span class="nav-number">2.7.1.</span> <span class="nav-text">a.在我们在参与的项目GitLab页面中可以看到这个项目所有人发起的Merge Requests ，点击每个Merge Request会显示出描述、功能的提交历史和每个变更的差异(diff)，参与Review的小伙伴就可以在这里发表意见了。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#b-如果你发现了代码中的问题，请留下具体的信息-改进的意见，并要求作者在合并前修复问题。"><span class="nav-number">2.7.2.</span> <span class="nav-text">b.如果你发现了代码中的问题，请留下具体的信息/改进的意见，并要求作者在合并前修复问题。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#c-评论可以针对整个Merge-Request，也可以针对其中的某一次Commit，或针对变更中的某一行或一块儿代码片段。"><span class="nav-number">2.7.3.</span> <span class="nav-text">c.评论可以针对整个Merge Request，也可以针对其中的某一次Commit，或针对变更中的某一行或一块儿代码片段。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#d-Code-Review不应该成为保证代码风格和编码标准的手段。编码风格和代码规范都属于死的东西，每个程序员在把自己的代码提交团队Review的时候，代码就应该是符合规范的，这是默认值，属于每个人自己的事情，不应该交由团队来完成，否则只会浪费大家本来就不够的时间，有很多工具可以帮我们完成这件事。"><span class="nav-number">2.7.4.</span> <span class="nav-text">d.Code Review不应该成为保证代码风格和编码标准的手段。编码风格和代码规范都属于死的东西，每个程序员在把自己的代码提交团队Review的时候，代码就应该是符合规范的，这是默认值，属于每个人自己的事情，不应该交由团队来完成，否则只会浪费大家本来就不够的时间，有很多工具可以帮我们完成这件事。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#e-Code-Review不应该承担发现代码错误的职责。Code-Review主要是审核代码的质量，如可读性，可维护性，以及程序的逻辑和对需求和设计的实现。"><span class="nav-number">2.7.5.</span> <span class="nav-text">e.Code Review不应该承担发现代码错误的职责。Code Review主要是审核代码的质量，如可读性，可维护性，以及程序的逻辑和对需求和设计的实现。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#f-Code-Review的实质是确认代码能够正确的运行，发现安全漏洞、功能错误、代码错误、设计失误、安全验证和防范、恶意代码等。"><span class="nav-number">2.7.6.</span> <span class="nav-text">f.Code Review的实质是确认代码能够正确的运行，发现安全漏洞、功能错误、代码错误、设计失误、安全验证和防范、恶意代码等。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#g-Code-Review的重点应该放在高风险的代码和容易引起高风险的修改或者重构的代码上。旧而复杂、处理敏感数据、处理重要业务逻辑和流程、大规模重构以及刚加入团队的开发者实现的代码都是审查的重点。"><span class="nav-number">2.7.7.</span> <span class="nav-text">g.Code Review的重点应该放在高风险的代码和容易引起高风险的修改或者重构的代码上。旧而复杂、处理敏感数据、处理重要业务逻辑和流程、大规模重构以及刚加入团队的开发者实现的代码都是审查的重点。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#h-确定不能通过Review的Merge-Request包括但不限于产生了冲突、语法错误、重大的逻辑缺陷等。"><span class="nav-number">2.7.8.</span> <span class="nav-text">h.确定不能通过Review的Merge Request包括但不限于产生了冲突、语法错误、重大的逻辑缺陷等。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#i-在Review之后需要留下你的意见，如果Review通过，请留下评论”lgtm”-looks-good-to-me-；如果不通过，也请在评论中留下理由。"><span class="nav-number">2.7.9.</span> <span class="nav-text">i.在Review之后需要留下你的意见，如果Review通过，请留下评论”lgtm”(looks good to me)；如果不通过，也请在评论中留下理由。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-补加提交和再次Review"><span class="nav-number">2.8.</span> <span class="nav-text">6.补加提交和再次Review</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#a-如果Merge-Request作者对反馈有任何疑问，可以在Merge-Request中响应，把Merge-Request当作是论坛用就可以。"><span class="nav-number">2.8.1.</span> <span class="nav-text">a.如果Merge Request作者对反馈有任何疑问，可以在Merge Request中响应，把Merge Request当作是论坛用就可以。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#b-在Merge-Request被Accept或Close之前，Merge-Request的作者可以再次提交代码并push到个人仓库，就像上一轮中的做法一样。这些新的提交会自动进入Merge-Request，其他小伙伴可以再次review变更。"><span class="nav-number">2.8.2.</span> <span class="nav-text">b.在Merge Request被Accept或Close之前，Merge Request的作者可以再次提交代码并push到个人仓库，就像上一轮中的做法一样。这些新的提交会自动进入Merge Request，其他小伙伴可以再次review变更。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#c-重复上述步骤直到Review被至少两位小伙伴通过。"><span class="nav-number">2.8.3.</span> <span class="nav-text">c.重复上述步骤直到Review被至少两位小伙伴通过。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#d-Merge-Request的作者将Merge-Request-Assign给负责项目的小伙伴-Master-。"><span class="nav-number">2.8.4.</span> <span class="nav-text">d.Merge Request的作者将Merge Request Assign给负责项目的小伙伴(Master)。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-Accept-Merge-Request"><span class="nav-number">2.9.</span> <span class="nav-text">7.Accept Merge Request</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#a-负责项目的小伙伴-Master-根据Review情况确定是要Accept还是Close这个Merge-Request。"><span class="nav-number">2.9.1.</span> <span class="nav-text">a.负责项目的小伙伴(Master)根据Review情况确定是要Accept还是Close这个Merge Request。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-从公共仓库同步代码"><span class="nav-number">2.10.</span> <span class="nav-text">8.从公共仓库同步代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#公共仓库中的代码会不停的更新，其他人必须主动从公共仓库同步代码："><span class="nav-number">2.11.</span> <span class="nav-text">公共仓库中的代码会不停的更新，其他人必须主动从公共仓库同步代码：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MJT</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://mjtgit.github.io/2017/12/05/开源项目git工作流程/';
+          this.page.identifier = '2017/12/05/开源项目git工作流程/';
+          this.page.title = '开源项目git工作流程';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
