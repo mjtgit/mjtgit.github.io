@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="css,clearfix,ellipsis," />
+  <meta name="keywords" content="vue,数据," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="一些常用的css样式单行文字省略展示1234567.ellipsis&amp;#123;    overflow: hidden;    white-space: nowrap;    -ms-text-overflow: ellipsis;    -o-text-overflow: ellipsis;    text-overflow: ellipsis;&amp;#125;">
-<meta name="keywords" content="css,clearfix,ellipsis">
+<meta name="description" content="问题是这样的，在vue的data数据中心定义一个对象obj，然后在页面加载时给obj添加或修改属性的时候，页面中的视图不会同步更新，按理来说vue data数据中的数据是双向绑定的，当数据中的数据发生改变时，视图就会同步更新才对。查看vue文档中说明：受现代 JavaScript 的限制 (以及废弃 Object.observe)，Vue 不能检测到对象属性的添加或删除。由于 Vue 会在初始化实">
+<meta name="keywords" content="vue,数据">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一些常用css样式">
-<meta property="og:url" content="http://mjtgit.github.io/2017/11/27/一些常用css样式/index.html">
+<meta property="og:title" content="vue数据改变，页面不刷新问题">
+<meta property="og:url" content="http://mjtgit.github.io/2017/12/08/vue数据改变，页面不刷新问题/index.html">
 <meta property="og:site_name" content="MJT&#39;s technical blog">
-<meta property="og:description" content="一些常用的css样式单行文字省略展示1234567.ellipsis&amp;#123;    overflow: hidden;    white-space: nowrap;    -ms-text-overflow: ellipsis;    -o-text-overflow: ellipsis;    text-overflow: ellipsis;&amp;#125;">
+<meta property="og:description" content="问题是这样的，在vue的data数据中心定义一个对象obj，然后在页面加载时给obj添加或修改属性的时候，页面中的视图不会同步更新，按理来说vue data数据中的数据是双向绑定的，当数据中的数据发生改变时，视图就会同步更新才对。查看vue文档中说明：受现代 JavaScript 的限制 (以及废弃 Object.observe)，Vue 不能检测到对象属性的添加或删除。由于 Vue 会在初始化实">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-19T06:15:26.000Z">
+<meta property="og:updated_time" content="2018-04-18T10:08:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一些常用css样式">
-<meta name="twitter:description" content="一些常用的css样式单行文字省略展示1234567.ellipsis&amp;#123;    overflow: hidden;    white-space: nowrap;    -ms-text-overflow: ellipsis;    -o-text-overflow: ellipsis;    text-overflow: ellipsis;&amp;#125;">
+<meta name="twitter:title" content="vue数据改变，页面不刷新问题">
+<meta name="twitter:description" content="问题是这样的，在vue的data数据中心定义一个对象obj，然后在页面加载时给obj添加或修改属性的时候，页面中的视图不会同步更新，按理来说vue data数据中的数据是双向绑定的，当数据中的数据发生改变时，视图就会同步更新才对。查看vue文档中说明：受现代 JavaScript 的限制 (以及废弃 Object.observe)，Vue 不能检测到对象属性的添加或删除。由于 Vue 会在初始化实">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://mjtgit.github.io/2017/11/27/一些常用css样式/"/>
+  <link rel="canonical" href="http://mjtgit.github.io/2017/12/08/vue数据改变，页面不刷新问题/"/>
 
 
 
 
 
-  <title>一些常用css样式 | MJT's technical blog</title>
+  <title>vue数据改变，页面不刷新问题 | MJT's technical blog</title>
   
 
 
@@ -299,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mjtgit.github.io/2017/11/27/一些常用css样式/">
+    <link itemprop="mainEntityOfPage" href="http://mjtgit.github.io/2017/12/08/vue数据改变，页面不刷新问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MJT">
@@ -316,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">一些常用css样式</h1>
+          <h1 class="post-title" itemprop="name headline">vue数据改变，页面不刷新问题</h1>
         
 
         <div class="post-meta">
@@ -328,8 +328,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T14:02:39+08:00">
-                2017-11-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-08T17:44:31+08:00">
+                2017-12-08
               </time>
             
 
@@ -351,8 +351,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
                   </a>
                 </span>
 
@@ -369,9 +369,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/11/27/一些常用css样式/#comments" itemprop="discussionUrl">
+                <a href="/2017/12/08/vue数据改变，页面不刷新问题/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/11/27/一些常用css样式/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/12/08/vue数据改变，页面不刷新问题/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -399,11 +399,15 @@
       
 
       
-        <h3 id="一些常用的css样式"><a href="#一些常用的css样式" class="headerlink" title="一些常用的css样式"></a>一些常用的css样式</h3><h5 id="单行文字省略展示"><a href="#单行文字省略展示" class="headerlink" title="单行文字省略展示"></a>单行文字省略展示</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.ellipsis&#123;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    white-space: nowrap;</span><br><span class="line">    -ms-text-overflow: ellipsis;</span><br><span class="line">    -o-text-overflow: ellipsis;</span><br><span class="line">    text-overflow: ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h5 id="多行文字省略展示"><a href="#多行文字省略展示" class="headerlink" title="多行文字省略展示"></a>多行文字省略展示</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">P&#123;</span><br><span class="line">    overflow:hidden;</span><br><span class="line">    display:-webkit-box;</span><br><span class="line">    -webkit-line-clamp:<span class="number">4</span>;</span><br><span class="line">    -webkit-box-orient:vertical</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="伪类箭头"><a href="#伪类箭头" class="headerlink" title="伪类箭头"></a>伪类箭头</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.form-go::after &#123;</span><br><span class="line">    border-top: <span class="number">2</span>rpx solid <span class="comment">#CACACA;</span></span><br><span class="line">    border-right: <span class="number">2</span>rpx solid <span class="comment">#CACACA;</span></span><br><span class="line">    content: <span class="string">""</span>;</span><br><span class="line">    width: <span class="number">18</span>rpx;</span><br><span class="line">    height: <span class="number">18</span>rpx;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: <span class="number">40</span>%;</span><br><span class="line">    right: <span class="number">30</span>rpx;</span><br><span class="line">    transform: rotateZ(<span class="number">45</span>deg);</span><br><span class="line">    -webkit-transform: rotateZ(<span class="number">45</span>deg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="兼容所有浏览器的清除浮动-用于父级"><a href="#兼容所有浏览器的清除浮动-用于父级" class="headerlink" title="兼容所有浏览器的清除浮动 用于父级"></a>兼容所有浏览器的清除浮动 用于父级</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:after &#123;</span><br><span class="line">    visibility: hidden;</span><br><span class="line">    display: block;</span><br><span class="line">    font-size: <span class="number">0</span>;</span><br><span class="line">    content: <span class="string">" "</span>;</span><br><span class="line">    clear: both;</span><br><span class="line">    height: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix &#123;</span><br><span class="line">    zoom: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="问题是这样的，在vue的data数据中心定义一个对象obj，然后在页面加载时给obj添加或修改属性的时候，页面中的视图不会同步更新，按理来说vue-data数据中的数据是双向绑定的，当数据中的数据发生改变时，视图就会同步更新才对。"><a href="#问题是这样的，在vue的data数据中心定义一个对象obj，然后在页面加载时给obj添加或修改属性的时候，页面中的视图不会同步更新，按理来说vue-data数据中的数据是双向绑定的，当数据中的数据发生改变时，视图就会同步更新才对。" class="headerlink" title="问题是这样的，在vue的data数据中心定义一个对象obj，然后在页面加载时给obj添加或修改属性的时候，页面中的视图不会同步更新，按理来说vue data数据中的数据是双向绑定的，当数据中的数据发生改变时，视图就会同步更新才对。"></a>问题是这样的，在vue的data数据中心定义一个对象obj，然后在页面加载时给obj添加或修改属性的时候，页面中的视图不会同步更新，按理来说vue data数据中的数据是双向绑定的，当数据中的数据发生改变时，视图就会同步更新才对。</h3><h3 id="查看vue文档中说明："><a href="#查看vue文档中说明：" class="headerlink" title="查看vue文档中说明："></a>查看<a href="https://cn.vuejs.org/v2/guide/reactivity.html#%E6%A3%80%E6%B5%8B%E5%8F%98%E5%8C%96%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9" target="_blank" rel="noopener">vue文档</a>中说明：</h3><h4 id="受现代-JavaScript-的限制-以及废弃-Object-observe-，Vue-不能检测到对象属性的添加或删除。由于-Vue-会在初始化实例时对属性执行-getter-setter-转化过程，所以属性必须在-data-对象上存在才能让-Vue-转换它，这样才能让它是响应的。例如："><a href="#受现代-JavaScript-的限制-以及废弃-Object-observe-，Vue-不能检测到对象属性的添加或删除。由于-Vue-会在初始化实例时对属性执行-getter-setter-转化过程，所以属性必须在-data-对象上存在才能让-Vue-转换它，这样才能让它是响应的。例如：" class="headerlink" title="受现代 JavaScript 的限制 (以及废弃 Object.observe)，Vue 不能检测到对象属性的添加或删除。由于 Vue 会在初始化实例时对属性执行 getter/setter 转化过程，所以属性必须在 data 对象上存在才能让 Vue 转换它，这样才能让它是响应的。例如："></a>受现代 JavaScript 的限制 (以及废弃 Object.observe)，Vue 不能检测到对象属性的添加或删除。由于 Vue 会在初始化实例时对属性执行 getter/setter 转化过程，所以属性必须在 data 对象上存在才能让 Vue 转换它，这样才能让它是响应的。例如：</h4><a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  data:&#123;</span><br><span class="line">  a:<span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// `vm.a` 是响应的</span></span><br><span class="line"></span><br><span class="line">vm.b = <span class="number">2</span></span><br><span class="line"><span class="comment">// `vm.b` 是非响应的</span></span><br></pre></td></tr></table></figure>
+<h4 id="Vue-不允许在已经创建的实例上动态添加新的根级响应式属性-root-level-reactive-property-。然而它可以使用-Vue-set-object-key-value-方法将响应属性添加到嵌套的对象上："><a href="#Vue-不允许在已经创建的实例上动态添加新的根级响应式属性-root-level-reactive-property-。然而它可以使用-Vue-set-object-key-value-方法将响应属性添加到嵌套的对象上：" class="headerlink" title="Vue 不允许在已经创建的实例上动态添加新的根级响应式属性 (root-level reactive property)。然而它可以使用 Vue.set(object, key, value) 方法将响应属性添加到嵌套的对象上："></a>Vue 不允许在已经创建的实例上动态添加新的根级响应式属性 (root-level reactive property)。然而它可以使用 Vue.set(object, key, value) 方法将响应属性添加到嵌套的对象上：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.set(vm.someObject, <span class="string">'b'</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="您还可以使用-vm-set-实例方法，这也是全局-Vue-set-方法的别名："><a href="#您还可以使用-vm-set-实例方法，这也是全局-Vue-set-方法的别名：" class="headerlink" title="您还可以使用 vm.$set 实例方法，这也是全局 Vue.set 方法的别名："></a>您还可以使用 vm.$set 实例方法，这也是全局 Vue.set 方法的别名：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$set(<span class="keyword">this</span>.someObject,<span class="string">'b'</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="有时你想向已有对象上添加一些属性，例如使用-Object-assign-或-extend-方法来添加属性。但是，添加到对象上的新属性不会触发更新。在这种情况下可以创建一个新的对象，让它包含原对象的属性和新的属性："><a href="#有时你想向已有对象上添加一些属性，例如使用-Object-assign-或-extend-方法来添加属性。但是，添加到对象上的新属性不会触发更新。在这种情况下可以创建一个新的对象，让它包含原对象的属性和新的属性：" class="headerlink" title="有时你想向已有对象上添加一些属性，例如使用 Object.assign() 或 _.extend() 方法来添加属性。但是，添加到对象上的新属性不会触发更新。在这种情况下可以创建一个新的对象，让它包含原对象的属性和新的属性："></a>有时你想向已有对象上添加一些属性，例如使用 Object.assign() 或 _.extend() 方法来添加属性。但是，添加到对象上的新属性不会触发更新。在这种情况下可以创建一个新的对象，让它包含原对象的属性和新的属性：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 代替 `Object.assign(this.someObject, &#123; a: 1, b: 2 &#125;)`</span></span><br><span class="line"><span class="keyword">this</span>.someObject = <span class="built_in">Object</span>.assign(&#123;&#125;, <span class="keyword">this</span>.someObject, &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span> &#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="也有一些数组相关的问题，之前已经在列表渲染中讲过。"><a href="#也有一些数组相关的问题，之前已经在列表渲染中讲过。" class="headerlink" title="也有一些数组相关的问题，之前已经在列表渲染中讲过。"></a>也有一些数组相关的问题，之前已经在列表渲染中讲过。</h4><hr>
+<h3 id="我是使用第二种解决的，贴下我的代码："><a href="#我是使用第二种解决的，贴下我的代码：" class="headerlink" title="我是使用第二种解决的，贴下我的代码："></a>我是使用第二种解决的，贴下我的代码：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 首先在data上存一下</span></span><br><span class="line"></span><br><span class="line">data () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      startDate: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"2018-01-01"</span>),</span><br><span class="line">      endDate: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"2048-12-31"</span>),</span><br><span class="line">      disable: <span class="literal">false</span>,</span><br><span class="line">      userInfor: &#123;</span><br><span class="line">        certification: &#123;</span><br><span class="line">          licencePhoto: <span class="string">''</span>,</span><br><span class="line">          idCardPhotos: [<span class="string">''</span>, <span class="string">''</span>],</span><br><span class="line">          qsPhoto: <span class="string">''</span>,</span><br><span class="line">          storeFrontPhotos: [],</span><br><span class="line">          idCardExpiryDate: <span class="string">''</span>,</span><br><span class="line">          qsExpiryDate: <span class="string">''</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      isAuthed: <span class="string">'noAuthed'</span>,</span><br><span class="line">      nowChooseTimeName: <span class="string">''</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在mounted中增加userInfor的certification属性</span></span><br><span class="line"></span><br><span class="line">mounted ()&#123;</span><br><span class="line">    <span class="keyword">this</span>.userInfor = App.ls.get(<span class="string">"store"</span>)</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span>.userInfor.certification) &#123;</span><br><span class="line">      <span class="keyword">var</span> certification = &#123;</span><br><span class="line">        licencePhoto: <span class="string">''</span>,</span><br><span class="line">        idCardPhotos: [<span class="string">''</span>, <span class="string">''</span>],</span><br><span class="line">        qsPhoto: <span class="string">''</span>,</span><br><span class="line">        storeFrontPhotos: [],</span><br><span class="line">        idCardExpiryDate: <span class="string">''</span>,</span><br><span class="line">        qsExpiryDate: <span class="string">''</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">this</span>.$set(<span class="keyword">this</span>.userInfor,<span class="string">'certification'</span>,certification)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 然后在事件触发时赋值，视图层就能同步展示了</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.userInfor.certification.licencePhoto = res</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -432,11 +436,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
+            <a href="/tags/vue/" rel="tag"><i class="fa fa-tag"></i> vue</a>
           
-            <a href="/tags/clearfix/" rel="tag"><i class="fa fa-tag"></i> clearfix</a>
-          
-            <a href="/tags/ellipsis/" rel="tag"><i class="fa fa-tag"></i> ellipsis</a>
+            <a href="/tags/数据/" rel="tag"><i class="fa fa-tag"></i> 数据</a>
           
         </div>
       
@@ -449,8 +451,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/26/git-use/" rel="next" title="git 指令总结">
-                <i class="fa fa-chevron-left"></i> git 指令总结
+              <a href="/2017/12/06/javaScript代码书写风格/" rel="next" title="javaScript代码书写风格">
+                <i class="fa fa-chevron-left"></i> javaScript代码书写风格
               </a>
             
           </div>
@@ -459,8 +461,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/27/七种css方式让一个容器水平垂直居中/" rel="prev" title="七种css方式让一个容器水平垂直居中">
-                七种css方式让一个容器水平垂直居中 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/29/微信公众平台本地存储被清除问题/" rel="prev" title="微信公众平台本地存储被清除问题">
+                微信公众平台本地存储被清除问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -644,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一些常用的css样式"><span class="nav-number">1.</span> <span class="nav-text">一些常用的css样式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#单行文字省略展示"><span class="nav-number">1.0.1.</span> <span class="nav-text">单行文字省略展示</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#多行文字省略展示"><span class="nav-number">1.0.2.</span> <span class="nav-text">多行文字省略展示</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#伪类箭头"><span class="nav-number">1.0.3.</span> <span class="nav-text">伪类箭头</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#兼容所有浏览器的清除浮动-用于父级"><span class="nav-number">1.0.4.</span> <span class="nav-text">兼容所有浏览器的清除浮动 用于父级</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题是这样的，在vue的data数据中心定义一个对象obj，然后在页面加载时给obj添加或修改属性的时候，页面中的视图不会同步更新，按理来说vue-data数据中的数据是双向绑定的，当数据中的数据发生改变时，视图就会同步更新才对。"><span class="nav-number">1.</span> <span class="nav-text">问题是这样的，在vue的data数据中心定义一个对象obj，然后在页面加载时给obj添加或修改属性的时候，页面中的视图不会同步更新，按理来说vue data数据中的数据是双向绑定的，当数据中的数据发生改变时，视图就会同步更新才对。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看vue文档中说明："><span class="nav-number">2.</span> <span class="nav-text">查看vue文档中说明：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#受现代-JavaScript-的限制-以及废弃-Object-observe-，Vue-不能检测到对象属性的添加或删除。由于-Vue-会在初始化实例时对属性执行-getter-setter-转化过程，所以属性必须在-data-对象上存在才能让-Vue-转换它，这样才能让它是响应的。例如："><span class="nav-number">2.1.</span> <span class="nav-text">受现代 JavaScript 的限制 (以及废弃 Object.observe)，Vue 不能检测到对象属性的添加或删除。由于 Vue 会在初始化实例时对属性执行 getter/setter 转化过程，所以属性必须在 data 对象上存在才能让 Vue 转换它，这样才能让它是响应的。例如：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vue-不允许在已经创建的实例上动态添加新的根级响应式属性-root-level-reactive-property-。然而它可以使用-Vue-set-object-key-value-方法将响应属性添加到嵌套的对象上："><span class="nav-number">2.2.</span> <span class="nav-text">Vue 不允许在已经创建的实例上动态添加新的根级响应式属性 (root-level reactive property)。然而它可以使用 Vue.set(object, key, value) 方法将响应属性添加到嵌套的对象上：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#您还可以使用-vm-set-实例方法，这也是全局-Vue-set-方法的别名："><span class="nav-number">2.3.</span> <span class="nav-text">您还可以使用 vm.$set 实例方法，这也是全局 Vue.set 方法的别名：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有时你想向已有对象上添加一些属性，例如使用-Object-assign-或-extend-方法来添加属性。但是，添加到对象上的新属性不会触发更新。在这种情况下可以创建一个新的对象，让它包含原对象的属性和新的属性："><span class="nav-number">2.4.</span> <span class="nav-text">有时你想向已有对象上添加一些属性，例如使用 Object.assign() 或 _.extend() 方法来添加属性。但是，添加到对象上的新属性不会触发更新。在这种情况下可以创建一个新的对象，让它包含原对象的属性和新的属性：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#也有一些数组相关的问题，之前已经在列表渲染中讲过。"><span class="nav-number">2.5.</span> <span class="nav-text">也有一些数组相关的问题，之前已经在列表渲染中讲过。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我是使用第二种解决的，贴下我的代码："><span class="nav-number">3.</span> <span class="nav-text">我是使用第二种解决的，贴下我的代码：</span></a></li></ol></div>
             
 
           </div>
@@ -821,9 +823,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://mjtgit.github.io/2017/11/27/一些常用css样式/';
-          this.page.identifier = '2017/11/27/一些常用css样式/';
-          this.page.title = '一些常用css样式';
+          this.page.url = 'http://mjtgit.github.io/2017/12/08/vue数据改变，页面不刷新问题/';
+          this.page.identifier = '2017/12/08/vue数据改变，页面不刷新问题/';
+          this.page.title = 'vue数据改变，页面不刷新问题';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
