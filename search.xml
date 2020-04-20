@@ -54,7 +54,7 @@
   <entry>
     <title><![CDATA[hexo的README.md]]></title>
     <url>%2F2019%2F04%2F20%2Fhexo%E7%9A%84README-md%2F</url>
-    <content type="text"><![CDATA[hexo安装和部署命令：123456789101112npm install -g hexo //全局安装Hexohexo init //初始化hexohexo generate（hexo g也可以） //生成静态页面hexo server //启动本地服务，进行文章预览调试hexo deploy //将.deploy目录部署到GitHubhexo help //查看帮助hexo version //查看Hexo的版本//每次部署的步骤，可按以下三步来进行hexo cleanhexo generatehexo deploy 一些常用命令：12hexo new "postName" //新建文章hexo new page"pageName" //新建页面]]></content>
+    <content type="text"><![CDATA[hexo安装和部署命令：123456789101112131415npm install -g hexo //全局安装Hexohexo init //初始化hexohexo generate（hexo g也可以） //生成静态页面hexo server //启动本地服务，进行文章预览调试hexo deploy //将.deploy目录部署到GitHubhexo help //查看帮助hexo version //查看Hexo的版本//每次部署的步骤，可按以下三步来进行hexo cleanhexo generatehexo deploy//上面3个命令可以简写hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 一些常用命令：12hexo new "postName" //新建文章hexo new page"pageName" //新建页面]]></content>
       <categories>
         <category>工具</category>
       </categories>
