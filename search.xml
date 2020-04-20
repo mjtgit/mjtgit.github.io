@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[npm link用法总结]]></title>
+    <url>%2F2020%2F04%2F20%2Fnpm-link%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[npm link用来在本地项目和本地npm模块之间建立连接，可以在本地进行模块测试 具体用法：1.项目和模块在同一个目录下，可以使用相对路径npm link ../module 2.项目和模块不在同一个目录下cd到模块目录，npm link，进行全局link cd到项目目录，npm link 模块名(package.json中的name)3.解除link解除项目和模块link，项目目录下，npm unlink 模块名 解除模块全局link，模块目录下，npm unlink 模块名4.MacOS全局命令路径/usr/local/bin/]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+        <tag>npm</tag>
+        <tag>link</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Mac 终端 oh-my-zsh 配置]]></title>
     <url>%2F2020%2F04%2F10%2FMac-%E7%BB%88%E7%AB%AF-oh-my-zsh-%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[前言 Mac 终端默认 shell 为 bash。但zsh相比bash好用很多，下面介绍使用zsh 以及 oh-my-zsh 的配置。 查看shell查看当前使用的 shell123echo $SHELL/bin/bash 查看安装的 shell12345678cat /etc/shells/bin/bash/bin/csh/bin/ksh/bin/sh/bin/tcsh/bin/zsh 使用 brew 更新 zsh123456brew install zsh==&gt; Downloading https://homebrew.bintray.com/bottles/zsh-5.5.1.high_sierra.bottle.tar.gz######################################################################## 100.0%==&gt; Pouring zsh-5.5.1.high_sierra.bottle.tar.gz/usr/local/Cellar/zsh/5.5.1: 1,444 files, 12MB 切换为 zsh1chsh -s /bin/zsh 注意：重启终端即可使用 zsh安装执行从 oh-my-zsh 的 GitHub 下载的安装脚本1234567891011121314sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot; ____ / /_ ____ ___ __ __ ____ _____/ /_ / __ \/ __ \ / __ `__ \/ / / / /_ / / ___/ __ \/ /_/ / / / / / / / / / / /_/ / / /_(__ ) / / /\____/_/ /_/ /_/ /_/ /_/\__, / /___/____/_/ /_/ /____/ ....is now installed!Please look over the ~/.zshrc file to select plugins, themes, and options.p.s. Follow us at https://twitter.com/ohmyzsh.p.p.s. Get stickers and t-shirts at http://shop.planetargon.com. 添加插件在~/.zshrc文件中找到plugins项，修改如下：1plugins=(git colored-man colorize pip python brew osx zsh-syntax-highlighting) 更多的设置参考oh-my-zsh wiki-Plugins配置就是更改.zshrc的内容，下面的是常用的一些配置。（.zshrc是在根目录下，可用vim编辑或者直接vsc .zshrc 直接用vscode打开修改）123456789101112plugins=(zsh-256color you-should-use git z sudo zsh-autosuggestions)//几个插件：256色终端，简写命令自动题型，git命令增强，全局跳转，快速添加 sudo，自动补全命令// 下面是各种快捷键alias zshrc=&quot;open ~/.zshrc&quot;alias vsc=&apos;open -a &quot;visual studio code&quot;&apos;alias sub=&apos;open -a &quot;sublime text&quot;&apos;alias ip=&quot;ifconfig en0 inet | grep inet | awk &apos;&#123; print \$2 &#125;&apos;&quot;alias ll=&apos;ls -l&apos;alias la=&apos;ls -a&apos;alias runvps=&quot;sudo ./client_darwin_386 -l 127.0.0.1:443 -r 104.194.78.93:29900 -mode fast2 -key &apos;111111&apos;&quot;]]></content>
