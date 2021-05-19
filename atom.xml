@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mjtgit.github.io/"/>
-  <updated>2020-04-20T04:09:28.000Z</updated>
+  <updated>2021-05-19T10:08:17.000Z</updated>
   <id>http://mjtgit.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://mjtgit.github.io/2020/04/20/npm-link%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/"/>
     <id>http://mjtgit.github.io/2020/04/20/npm-link用法总结/</id>
     <published>2020-04-20T04:06:48.000Z</published>
-    <updated>2020-04-20T04:09:28.000Z</updated>
+    <updated>2021-05-19T10:08:17.000Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>npm link用来在本地项目和本地npm模块之间建立连接，可以在本地进行模块测试</p></blockquote><h2 id="具体用法："><a href="#具体用法：" class="headerlink" title="具体用法："></a>具体用法：</h2><h3 id="1-项目和模块在同一个目录下，可以使用相对路径"><a href="#1-项目和模块在同一个目录下，可以使用相对路径" class="headerlink" title="1.项目和模块在同一个目录下，可以使用相对路径"></a>1.项目和模块在同一个目录下，可以使用相对路径</h3><h4 id="npm-link-module"><a href="#npm-link-module" class="headerlink" title="npm link ../module"></a>npm link ../module</h4><a id="more"></a><h3 id="2-项目和模块不在同一个目录下"><a href="#2-项目和模块不在同一个目录下" class="headerlink" title="2.项目和模块不在同一个目录下"></a>2.项目和模块不在同一个目录下</h3><h4 id="cd到模块目录，npm-link，进行全局link-cd到项目目录，npm-link-模块名-package-json中的name"><a href="#cd到模块目录，npm-link，进行全局link-cd到项目目录，npm-link-模块名-package-json中的name" class="headerlink" title="cd到模块目录，npm link，进行全局link cd到项目目录，npm link 模块名(package.json中的name)"></a>cd到模块目录，npm link，进行全局link <br>cd到项目目录，npm link 模块名(package.json中的name)</h4><h3 id="3-解除link"><a href="#3-解除link" class="headerlink" title="3.解除link"></a>3.解除link</h3><h4 id="解除项目和模块link，项目目录下，npm-unlink-模块名-解除模块全局link，模块目录下，npm-unlink-模块名"><a href="#解除项目和模块link，项目目录下，npm-unlink-模块名-解除模块全局link，模块目录下，npm-unlink-模块名" class="headerlink" title="解除项目和模块link，项目目录下，npm unlink 模块名  解除模块全局link，模块目录下，npm unlink 模块名"></a>解除项目和模块link，项目目录下，npm unlink 模块名 <br> 解除模块全局link，模块目录下，npm unlink 模块名</h4><h3 id="4-MacOS全局命令路径"><a href="#4-MacOS全局命令路径" class="headerlink" title="4.MacOS全局命令路径"></a>4.MacOS全局命令路径</h3><h4 id="usr-local-bin"><a href="#usr-local-bin" class="headerlink" title="/usr/local/bin/"></a>/usr/local/bin/</h4>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>npm link用来在本地项目和本地npm模块之间建立连接，可以在本地进行模块测试</p></blockquote><h2 id="具体用法："><a href="#具体用法：" class="headerlink" title="具体用法："></a>具体用法：</h2><h3 id="1-项目和模块在同一个目录下，可以使用相对路径"><a href="#1-项目和模块在同一个目录下，可以使用相对路径" class="headerlink" title="1.项目和模块在同一个目录下，可以使用相对路径"></a>1.项目和模块在同一个目录下，可以使用相对路径</h3><h4 id="npm-link-module"><a href="#npm-link-module" class="headerlink" title="npm link ../module"></a>npm link ../module</h4><a id="more"></a><h3 id="2-项目和模块不在同一个目录下"><a href="#2-项目和模块不在同一个目录下" class="headerlink" title="2.项目和模块不在同一个目录下"></a>2.项目和模块不在同一个目录下</h3><h4 id="cd到模块目录，npm-link，进行全局link-cd到项目目录，npm-link-模块名-package-json中的name"><a href="#cd到模块目录，npm-link，进行全局link-cd到项目目录，npm-link-模块名-package-json中的name" class="headerlink" title="cd到模块目录，npm link，进行全局link cd到项目目录，npm link 模块名(package.json中的name)"></a>cd到模块目录，npm link，进行全局link <br>cd到项目目录，npm link 模块名(package.json中的name)</h4><h3 id="3-解除link"><a href="#3-解除link" class="headerlink" title="3.解除link"></a>3.解除link</h3><h4 id="解除项目和模块link，项目目录下，npm-unlink-模块名-解除模块全局link，模块目录下，npm-unlink-模块名"><a href="#解除项目和模块link，项目目录下，npm-unlink-模块名-解除模块全局link，模块目录下，npm-unlink-模块名" class="headerlink" title="解除项目和模块link，项目目录下，npm unlink 模块名  解除模块全局link，模块目录下，npm unlink 模块名"></a>解除项目和模块link，项目目录下，npm unlink 模块名 <br> 解除模块全局link，模块目录下，npm unlink 模块名</h4><h3 id="4-MacOS全局命令路径"><a href="#4-MacOS全局命令路径" class="headerlink" title="4.MacOS全局命令路径"></a>4.MacOS全局命令路径</h3><h4 id="usr-local-bin"><a href="#usr-local-bin" class="headerlink" title="/usr/local/bin/"></a>/usr/local/bin/</h4><h2 id="使用示例："><a href="#使用示例：" class="headerlink" title="使用示例："></a>使用示例：</h2><h3 id="Users-mjt-DW-目录下的release-code模块（用于在本地终端，直接发布服务器上的项目），用npm-link到全局后直接在终端输入指令，可以实现登录服务器，执行服务器上的脚本发布项目。"><a href="#Users-mjt-DW-目录下的release-code模块（用于在本地终端，直接发布服务器上的项目），用npm-link到全局后直接在终端输入指令，可以实现登录服务器，执行服务器上的脚本发布项目。" class="headerlink" title="/Users/mjt/DW 目录下的release-code模块（用于在本地终端，直接发布服务器上的项目），用npm link到全局后直接在终端输入指令，可以实现登录服务器，执行服务器上的脚本发布项目。"></a>/Users/mjt/DW 目录下的release-code模块（用于在本地终端，直接发布服务器上的项目），用npm link到全局后直接在终端输入指令，可以实现登录服务器，执行服务器上的脚本发布项目。</h3>]]></content>
     
     <summary type="html">
     
@@ -65,9 +65,9 @@
       <category term="工具" scheme="http://mjtgit.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="zsh" scheme="http://mjtgit.github.io/tags/zsh/"/>
-    
       <category term="Mac" scheme="http://mjtgit.github.io/tags/Mac/"/>
+    
+      <category term="zsh" scheme="http://mjtgit.github.io/tags/zsh/"/>
     
       <category term="oh-my-zsh" scheme="http://mjtgit.github.io/tags/oh-my-zsh/"/>
     
@@ -98,9 +98,9 @@
       <category term="工具" scheme="http://mjtgit.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Mac" scheme="http://mjtgit.github.io/tags/Mac/"/>
-    
       <category term="tree" scheme="http://mjtgit.github.io/tags/tree/"/>
+    
+      <category term="Mac" scheme="http://mjtgit.github.io/tags/Mac/"/>
     
   </entry>
   

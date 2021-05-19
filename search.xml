@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[npm link用法总结]]></title>
     <url>%2F2020%2F04%2F20%2Fnpm-link%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93%2F</url>
-    <content type="text"><![CDATA[npm link用来在本地项目和本地npm模块之间建立连接，可以在本地进行模块测试 具体用法：1.项目和模块在同一个目录下，可以使用相对路径npm link ../module 2.项目和模块不在同一个目录下cd到模块目录，npm link，进行全局link cd到项目目录，npm link 模块名(package.json中的name)3.解除link解除项目和模块link，项目目录下，npm unlink 模块名 解除模块全局link，模块目录下，npm unlink 模块名4.MacOS全局命令路径/usr/local/bin/]]></content>
+    <content type="text"><![CDATA[npm link用来在本地项目和本地npm模块之间建立连接，可以在本地进行模块测试 具体用法：1.项目和模块在同一个目录下，可以使用相对路径npm link ../module 2.项目和模块不在同一个目录下cd到模块目录，npm link，进行全局link cd到项目目录，npm link 模块名(package.json中的name)3.解除link解除项目和模块link，项目目录下，npm unlink 模块名 解除模块全局link，模块目录下，npm unlink 模块名4.MacOS全局命令路径/usr/local/bin/使用示例：/Users/mjt/DW 目录下的release-code模块（用于在本地终端，直接发布服务器上的项目），用npm link到全局后直接在终端输入指令，可以实现登录服务器，执行服务器上的脚本发布项目。]]></content>
       <categories>
         <category>工具</category>
       </categories>
@@ -21,8 +21,8 @@
         <category>工具</category>
       </categories>
       <tags>
-        <tag>zsh</tag>
         <tag>Mac</tag>
+        <tag>zsh</tag>
         <tag>oh-my-zsh</tag>
         <tag>.zshrc</tag>
       </tags>
@@ -35,8 +35,8 @@
         <category>工具</category>
       </categories>
       <tags>
-        <tag>Mac</tag>
         <tag>tree</tag>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
