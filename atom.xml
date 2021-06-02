@@ -89,9 +89,9 @@
       <category term="工具" scheme="http://mjtgit.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="zsh" scheme="http://mjtgit.github.io/tags/zsh/"/>
-    
       <category term="Mac" scheme="http://mjtgit.github.io/tags/Mac/"/>
+    
+      <category term="zsh" scheme="http://mjtgit.github.io/tags/zsh/"/>
     
       <category term="oh-my-zsh" scheme="http://mjtgit.github.io/tags/oh-my-zsh/"/>
     
@@ -122,9 +122,9 @@
       <category term="工具" scheme="http://mjtgit.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Mac" scheme="http://mjtgit.github.io/tags/Mac/"/>
-    
       <category term="tree" scheme="http://mjtgit.github.io/tags/tree/"/>
+    
+      <category term="Mac" scheme="http://mjtgit.github.io/tags/Mac/"/>
     
   </entry>
   
