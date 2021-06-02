@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mjtgit.github.io/"/>
-  <updated>2021-05-19T10:08:17.000Z</updated>
+  <updated>2021-06-02T10:10:32.000Z</updated>
   <id>http://mjtgit.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>sourceTree回滚代码到指定版本</title>
+    <link href="http://mjtgit.github.io/2021/06/02/sourceTree%E5%9B%9E%E6%BB%9A%E4%BB%A3%E7%A0%81%E5%88%B0%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC/"/>
+    <id>http://mjtgit.github.io/2021/06/02/sourceTree回滚代码到指定版本/</id>
+    <published>2021-06-02T10:02:45.000Z</published>
+    <updated>2021-06-02T10:10:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、打开sourceTree，选中分支，找到需要回滚的版本，右击选择“将xx重置到此次提交”"><a href="#1、打开sourceTree，选中分支，找到需要回滚的版本，右击选择“将xx重置到此次提交”" class="headerlink" title="1、打开sourceTree，选中分支，找到需要回滚的版本，右击选择“将xx重置到此次提交”"></a>1、打开sourceTree，选中分支，找到需要回滚的版本，右击选择“将xx重置到此次提交”</h3><p><img src="1.png" alt=""></p><a id="more"></a><h3 id="2、选择强行合并"><a href="#2、选择强行合并" class="headerlink" title="2、选择强行合并"></a>2、选择强行合并</h3><p><img src="2.png" alt=""></p><h3 id="3、找到最新的版本，右击，选择“将xx重置到此这提交”选择“软合并”"><a href="#3、找到最新的版本，右击，选择“将xx重置到此这提交”选择“软合并”" class="headerlink" title="3、找到最新的版本，右击，选择“将xx重置到此这提交”选择“软合并”"></a>3、找到最新的版本，右击，选择“将xx重置到此这提交”选择“软合并”</h3><p><img src="3.png" alt=""></p><h3 id="4、提交代码，这时候你会发现修改了一些文件需要提交，选中提交即可，这样就会将代码回滚到了指定版本。"><a href="#4、提交代码，这时候你会发现修改了一些文件需要提交，选中提交即可，这样就会将代码回滚到了指定版本。" class="headerlink" title="4、提交代码，这时候你会发现修改了一些文件需要提交，选中提交即可，这样就会将代码回滚到了指定版本。"></a>4、提交代码，这时候你会发现修改了一些文件需要提交，选中提交即可，这样就会将代码回滚到了指定版本。</h3><p><img src="4.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1、打开sourceTree，选中分支，找到需要回滚的版本，右击选择“将xx重置到此次提交”&quot;&gt;&lt;a href=&quot;#1、打开sourceTree，选中分支，找到需要回滚的版本，右击选择“将xx重置到此次提交”&quot; class=&quot;headerlink&quot; title=&quot;1、打开sourceTree，选中分支，找到需要回滚的版本，右击选择“将xx重置到此次提交”&quot;&gt;&lt;/a&gt;1、打开sourceTree，选中分支，找到需要回滚的版本，右击选择“将xx重置到此次提交”&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="http://mjtgit.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="git" scheme="http://mjtgit.github.io/tags/git/"/>
+    
+      <category term="sourceTree" scheme="http://mjtgit.github.io/tags/sourceTree/"/>
+    
+  </entry>
   
   <entry>
     <title>npm link用法总结</title>
@@ -65,9 +89,9 @@
       <category term="工具" scheme="http://mjtgit.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Mac" scheme="http://mjtgit.github.io/tags/Mac/"/>
-    
       <category term="zsh" scheme="http://mjtgit.github.io/tags/zsh/"/>
+    
+      <category term="Mac" scheme="http://mjtgit.github.io/tags/Mac/"/>
     
       <category term="oh-my-zsh" scheme="http://mjtgit.github.io/tags/oh-my-zsh/"/>
     
@@ -98,9 +122,9 @@
       <category term="工具" scheme="http://mjtgit.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="tree" scheme="http://mjtgit.github.io/tags/tree/"/>
-    
       <category term="Mac" scheme="http://mjtgit.github.io/tags/Mac/"/>
+    
+      <category term="tree" scheme="http://mjtgit.github.io/tags/tree/"/>
     
   </entry>
   
@@ -508,35 +532,6 @@
       <category term="随机颜色" scheme="http://mjtgit.github.io/tags/%E9%9A%8F%E6%9C%BA%E9%A2%9C%E8%89%B2/"/>
     
       <category term="分割数组，屏幕适配，Cookie" scheme="http://mjtgit.github.io/tags/%E5%88%86%E5%89%B2%E6%95%B0%E7%BB%84%EF%BC%8C%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D%EF%BC%8CCookie/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>post请求封装</title>
-    <link href="http://mjtgit.github.io/2017/09/10/post%E8%AF%B7%E6%B1%82%E5%B0%81%E8%A3%85/"/>
-    <id>http://mjtgit.github.io/2017/09/10/post请求封装/</id>
-    <published>2017-09-10T11:18:04.000Z</published>
-    <updated>2018-03-19T11:20:26.000Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="原生javaScript封装Ajax的post请求："><a href="#原生javaScript封装Ajax的post请求：" class="headerlink" title="原生javaScript封装Ajax的post请求："></a>原生javaScript封装Ajax的post请求：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function post(url, param, callback) &#123;</span><br><span class="line">    var xmlhttp = new XMLHttpRequest();</span><br><span class="line">    var paraStr = <span class="string">''</span>;</span><br><span class="line">    xmlhttp.onreadystatechange = function () &#123;</span><br><span class="line">        <span class="keyword">if</span> (this.readyState == <span class="number">4</span> &amp;&amp; this.status == <span class="number">200</span>) &#123;</span><br><span class="line">            callback(JSON.parse(xmlhttp.responseText));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    xmlhttp.open(<span class="string">'post'</span>, url, true);</span><br><span class="line">    xmlhttp.setRequestHeader(<span class="string">"Content-type"</span>, <span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line">    xmlhttp.setRequestHeader(<span class="string">"If-Modified-Since"</span>, <span class="string">"0"</span>);</span><br><span class="line">    //下面这行 请求为ajax</span><br><span class="line">    xmlhttp.setRequestHeader(<span class="string">"X-Requested-With"</span>,<span class="string">"XMLHttpRequest"</span>);</span><br><span class="line">    <span class="keyword">for</span> (key <span class="keyword">in</span> param) &#123;</span><br><span class="line">        paraStr += key + <span class="string">"="</span> + encodeURIComponent(param[key]) + <span class="string">"&amp;"</span></span><br><span class="line">    &#125;</span><br><span class="line">    paraStr = paraStr.substr(<span class="number">0</span>, paraStr.length - <span class="number">1</span>);</span><br><span class="line">    xmlhttp.send(paraStr);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;原生javaScript封装Ajax的post请求：&quot;&gt;&lt;a href=&quot;#原生javaScript封装Ajax的post请求：&quot; class=&quot;headerlink&quot; title=&quot;原生javaScript封装Ajax的post请求：&quot;&gt;&lt;/a&gt;原生javaSc
-      
-    
-    </summary>
-    
-      <category term="javaScript" scheme="http://mjtgit.github.io/categories/javaScript/"/>
-    
-    
-      <category term="javaScript" scheme="http://mjtgit.github.io/tags/javaScript/"/>
-    
-      <category term="ajax" scheme="http://mjtgit.github.io/tags/ajax/"/>
-    
-      <category term="post" scheme="http://mjtgit.github.io/tags/post/"/>
     
   </entry>
   
