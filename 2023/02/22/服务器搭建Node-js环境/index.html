@@ -89,7 +89,7 @@
 <meta property="og:description" content="linux云服务器安装node.js的方法：1、登录服务器下载node.js(一般安装在local中)12cd &#x2F;usr&#x2F;localwget https:&#x2F;&#x2F;nodejs.org&#x2F;dist&#x2F;v18.14.0&#x2F;node-v18.14.0-linux-x64.tar.xz">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-02-22T07:58:33.000Z">
-<meta property="article:modified_time" content="2023-02-22T08:23:17.874Z">
+<meta property="article:modified_time" content="2025-09-13T08:14:37.661Z">
 <meta property="article:author" content="MJT">
 <meta property="article:tag" content="服务器">
 <meta property="article:tag" content="node">
@@ -393,7 +393,7 @@
 <span id="more"></span>
 <h3 id="2、执行以下命令，解压安装包"><a href="#2、执行以下命令，解压安装包" class="headerlink" title="2、执行以下命令，解压安装包"></a>2、执行以下命令，解压安装包</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xvf node-v18.14.0-linux-x64.tar.xz</span><br></pre></td></tr></table></figure>
 
-<h3 id="3、解压完之后删除压缩包，并且给解压后的包重命名"><a href="#3、解压完之后删除压缩包，并且给解压后的包重命名" class="headerlink" title="3、解压完之后删除压缩包，并且给解压后的包重命名"></a>3、解压完之后删除压缩包，并且给解压后的包重命名</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf node-v18.14.0-linux-x64.tar.xz</span><br><span class="line">mv mv node-v18.14.0-linux-x64 nodejs</span><br></pre></td></tr></table></figure>
+<h3 id="3、解压完之后删除压缩包，并且给解压后的包重命名"><a href="#3、解压完之后删除压缩包，并且给解压后的包重命名" class="headerlink" title="3、解压完之后删除压缩包，并且给解压后的包重命名"></a>3、解压完之后删除压缩包，并且给解压后的包重命名</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf node-v18.14.0-linux-x64.tar.xz</span><br><span class="line">mv node-v18.14.0-linux-x64 nodejs</span><br></pre></td></tr></table></figure>
 
 <h3 id="4、依次执行以下命令，创建软链接"><a href="#4、依次执行以下命令，创建软链接" class="headerlink" title="4、依次执行以下命令，创建软链接"></a>4、依次执行以下命令，创建软链接</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/nodejs/bin/node /usr/local/bin/node</span><br><span class="line">ln -s /usr/local/nodejs/bin/npm /usr/local/bin/npm</span><br><span class="line">ln -s /usr/local/nodejs/bin/npx /usr/local/bin/npx</span><br></pre></td></tr></table></figure>
 
@@ -655,7 +655,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2023</span>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
